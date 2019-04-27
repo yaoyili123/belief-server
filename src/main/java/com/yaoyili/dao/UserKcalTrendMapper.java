@@ -1,7 +1,9 @@
 package com.yaoyili.dao;
 
 import com.yaoyili.model.UserKcalTrend;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface UserKcalTrendMapper {
     int deleteByPrimaryKey(Integer uid);
 

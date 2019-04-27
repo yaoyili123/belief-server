@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yaoyili.dao.UserKcalTrendMapper">
+  <resultMap id="UserKcalTrendResultMap" type="com.yaoyili.model.UserKcalTrend">
+    <id column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="kcal" jdbcType="INTEGER" property="kcal" />
+    <result column="date" jdbcType="DATE" property="date" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    uid, kcal, date
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="UserKcalTrendResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_kcal_trend
+    where uid = #{uid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user_kcal_trend
+    where uid = #{uid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yaoyili.model.UserKcalTrend">
+    insert into user_kcal_trend (uid, kcal, date)
+    values (#{uid,jdbcType=INTEGER}, #{kcal,jdbcType=INTEGER}, #{date,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yaoyili.model.UserKcalTrend">
+    insert into user_kcal_trend
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="kcal != null">
+        kcal,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="kcal != null">
+        #{kcal,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yaoyili.model.UserKcalTrend">
+    update user_kcal_trend
+    <set>
+      <if test="kcal != null">
+        kcal = #{kcal,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        date = #{date,jdbcType=DATE},
+      </if>
+    </set>
+    where uid = #{uid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yaoyili.model.UserKcalTrend">
+    update user_kcal_trend
+    set kcal = #{kcal,jdbcType=INTEGER},
+      date = #{date,jdbcType=DATE}
+    where uid = #{uid,jdbcType=INTEGER}
+  </update>
+</mapper>

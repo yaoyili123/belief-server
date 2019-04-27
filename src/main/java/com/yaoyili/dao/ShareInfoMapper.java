@@ -1,7 +1,9 @@
 package com.yaoyili.dao;
 
 import com.yaoyili.model.ShareInfo;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface ShareInfoMapper {
     int deleteByPrimaryKey(Integer sid);
 

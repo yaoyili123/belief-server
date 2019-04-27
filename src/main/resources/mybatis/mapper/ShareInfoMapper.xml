@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yaoyili.dao.ShareInfoMapper">
+  <resultMap id="ShareInfoResultMap" type="com.yaoyili.model.ShareInfo">
+    <id column="sid" jdbcType="INTEGER" property="sid" />
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="photo_url" jdbcType="VARCHAR" property="photoUrl" />
+  </resultMap>
+  <sql id="ShareInfo_Column_List">
+    sid, uid, title, photo_url
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ShareInfoResultMap">
+    select 
+    <include refid="ShareInfo_Column_List" />
+    from share_info
+    where sid = #{sid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from share_info
+    where sid = #{sid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yaoyili.model.ShareInfo">
+    insert into share_info (sid, uid, title, 
+      photo_url)
+    values (#{sid,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, 
+      #{photoUrl,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yaoyili.model.ShareInfo">
+    insert into share_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="sid != null">
+        sid,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="photoUrl != null">
+        photo_url,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="sid != null">
+        #{sid,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="photoUrl != null">
+        #{photoUrl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yaoyili.model.ShareInfo">
+    update share_info
+    <set>
+      <if test="uid != null">
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="photoUrl != null">
+        photo_url = #{photoUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where sid = #{sid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yaoyili.model.ShareInfo">
+    update share_info
+    set uid = #{uid,jdbcType=INTEGER},
+      title = #{title,jdbcType=VARCHAR},
+      photo_url = #{photoUrl,jdbcType=VARCHAR}
+    where sid = #{sid,jdbcType=INTEGER}
+  </update>
+</mapper>
