@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yaoyili.dao.UserJoinClassMapper">
+  <resultMap id="BaseResultMap" type="com.yaoyili.model.UserJoinClass">
+    <id column="uid" jdbcType="INTEGER" property="uid" />
+    <id column="scid" jdbcType="INTEGER" property="scid" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="com.yaoyili.model.UserJoinClass">
+    delete from user_join_class
+    where uid = #{uid,jdbcType=INTEGER}
+      and scid = #{scid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yaoyili.model.UserJoinClass">
+    insert into user_join_class (uid, scid)
+    values (#{uid,jdbcType=INTEGER}, #{scid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yaoyili.model.UserJoinClass">
+    insert into user_join_class
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="scid != null">
+        scid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="scid != null">
+        #{scid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.yaoyili.model.UserJoinClass">
+    <id column="uid" jdbcType="INTEGER" property="uid" />
+    <id column="scid" jdbcType="INTEGER" property="scid" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="com.yaoyili.model.UserJoinClass">
+    delete from user_join_class
+    where uid = #{uid,jdbcType=INTEGER}
+      and scid = #{scid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yaoyili.model.UserJoinClass">
+    insert into user_join_class (uid, scid)
+    values (#{uid,jdbcType=INTEGER}, #{scid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yaoyili.model.UserJoinClass">
+    insert into user_join_class
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="scid != null">
+        scid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="scid != null">
+        #{scid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>
