@@ -9,12 +9,20 @@
   <sql id="Base_Column_List">
     uid, kcal, date
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="UserKcalTrendResultMap">
+  <select id="selectbyUser" parameterType="java.lang.Integer" resultMap="UserKcalTrendResultMap">
     select 
     <include refid="Base_Column_List" />
     from user_kcal_trend
     where uid = #{uid,jdbcType=INTEGER}
   </select>
+
+  <select id="selectbyKeys" parameterType="com.yaoyili.model.UserKcalTrend" resultMap="UserKcalTrendResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user_kcal_trend
+    where uid = #{uid,jdbcType=INTEGER} and date = #{date,jdbcType=DATE}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from user_kcal_trend
     where uid = #{uid,jdbcType=INTEGER}
@@ -58,12 +66,12 @@
         date = #{date,jdbcType=DATE},
       </if>
     </set>
-    where uid = #{uid,jdbcType=INTEGER}
+    where uid = #{uid,jdbcType=INTEGER} and date = #{date,jdbcType=DATE}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.yaoyili.model.UserKcalTrend">
     update user_kcal_trend
     set kcal = #{kcal,jdbcType=INTEGER},
       date = #{date,jdbcType=DATE}
-    where uid = #{uid,jdbcType=INTEGER}
+    where uid = #{uid,jdbcType=INTEGER} and date = #{date,jdbcType=DATE}
   </update>
 </mapper>

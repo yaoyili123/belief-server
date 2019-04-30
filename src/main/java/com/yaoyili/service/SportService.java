@@ -6,7 +6,11 @@ import java.util.List;
 
 public interface SportService {
 
-    List<UserJoinClass> getJoinedClasses(int uid);
+    List<Integer> getJoinedClasses(int uid);
 
-    int getTotalTime(int uid);
+    int getTotalKcal(int uid);
+
+    void addClassToUser(int uid, List<Integer> classList);
+
+    void settleKcal(int uid, int kcal, int time);
 }

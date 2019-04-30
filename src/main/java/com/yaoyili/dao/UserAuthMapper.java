@@ -16,4 +16,6 @@ public interface UserAuthMapper {
     int updateByPrimaryKeySelective(UserAuth record);
 
     int updateByPrimaryKey(UserAuth record);
+
+    UserAuth isRepeated(String username);
 }

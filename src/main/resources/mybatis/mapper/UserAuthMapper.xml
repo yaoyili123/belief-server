@@ -15,6 +15,13 @@
     from user_auth
     where uid = #{uid,jdbcType=INTEGER}
   </select>
+
+  <select id="isRepeated" parameterType="java.lang.String" resultMap="UserAuthResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user_auth
+    where username = #{username,jdbcType=INTEGER}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from user_auth
     where uid = #{uid,jdbcType=INTEGER}

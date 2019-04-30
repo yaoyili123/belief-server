@@ -5,9 +5,16 @@ public class UserSportInfo {
 
     private Integer totalSportTime;
 
-    private Integer totalKocal;
+    private Integer totalKcal;
 
-    private Integer todaySportTime;
+    private Integer todayKcal;
+
+    public UserSportInfo(Integer uid, Integer totalSportTime, Integer totalKocal, Integer todaykocal) {
+        this.uid = uid;
+        this.totalSportTime = totalSportTime;
+        this.totalKcal = totalKocal;
+        this.todayKcal = todaykocal;
+    }
 
     public Integer getUid() {
         return uid;
@@ -25,19 +32,19 @@ public class UserSportInfo {
         this.totalSportTime = totalSportTime;
     }
 
-    public Integer getTotalKocal() {
-        return totalKocal;
+    public Integer getTotalKcal() {
+        return totalKcal;
     }
 
-    public void setTotalKocal(Integer totalKocal) {
-        this.totalKocal = totalKocal;
+    public void setTotalKcal(Integer totalKcal) {
+        this.totalKcal = totalKcal;
     }
 
-    public Integer getTodaySportTime() {
-        return todaySportTime;
+    public Integer getTodayKcal() {
+        return todayKcal;
     }
 
-    public void setTodaySportTime(Integer todaySportTime) {
-        this.todaySportTime = todaySportTime;
+    public void setTodayKcal(Integer todayKcal) {
+        this.todayKcal = todayKcal;
     }
 }

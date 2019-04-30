@@ -9,6 +9,12 @@ public class UserKcalTrend {
 
     private Date date;
 
+    public UserKcalTrend(Integer uid, Integer kcal, Date date) {
+        this.uid = uid;
+        this.kcal = kcal;
+        this.date = date;
+    }
+
     public Integer getUid() {
         return uid;
     }

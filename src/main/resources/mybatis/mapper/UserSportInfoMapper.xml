@@ -4,11 +4,11 @@
   <resultMap id="UserSportInfoResultMap" type="com.yaoyili.model.UserSportInfo">
     <id column="uid" jdbcType="INTEGER" property="uid" />
     <result column="total_sport_time" jdbcType="INTEGER" property="totalSportTime" />
-    <result column="total_kocal" jdbcType="INTEGER" property="totalKocal" />
-    <result column="today_sport_time" jdbcType="INTEGER" property="todaySportTime" />
+    <result column="total_kcal" jdbcType="INTEGER" property="totalKcal" />
+    <result column="today_kcal" jdbcType="INTEGER" property="todayKcal" />
   </resultMap>
   <sql id="Base_Column_List">
-    uid, total_sport_time, total_kocal, today_sport_time
+    uid, total_sport_time, total_kcal, today_kcal
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="UserSportInfoResultMap">
     select 
@@ -21,10 +21,10 @@
     where uid = #{uid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.yaoyili.model.UserSportInfo">
-    insert into user_sport_info (uid, total_sport_time, total_kocal, 
-      today_sport_time)
-    values (#{uid,jdbcType=INTEGER}, #{totalSportTime,jdbcType=INTEGER}, #{totalKocal,jdbcType=INTEGER}, 
-      #{todaySportTime,jdbcType=INTEGER})
+    insert into user_sport_info (uid, total_sport_time, total_kcal,
+      today_kcal)
+    values (#{uid,jdbcType=INTEGER}, #{totalSportTime,jdbcType=INTEGER}, #{totalKcal,jdbcType=INTEGER},
+      #{todayKcal,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.yaoyili.model.UserSportInfo">
     insert into user_sport_info
@@ -35,11 +35,11 @@
       <if test="totalSportTime != null">
         total_sport_time,
       </if>
-      <if test="totalKocal != null">
-        total_kocal,
+      <if test="totalKcal != null">
+        total_kcal,
       </if>
-      <if test="todaySportTime != null">
-        today_sport_time,
+      <if test="todayKcal != null">
+        today_kcal,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -49,11 +49,11 @@
       <if test="totalSportTime != null">
         #{totalSportTime,jdbcType=INTEGER},
       </if>
-      <if test="totalKocal != null">
-        #{totalKocal,jdbcType=INTEGER},
+      <if test="totalKcal != null">
+        #{totalKcal,jdbcType=INTEGER},
       </if>
-      <if test="todaySportTime != null">
-        #{todaySportTime,jdbcType=INTEGER},
+      <if test="todayKcal != null">
+        #{todayKcal,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -63,11 +63,11 @@
       <if test="totalSportTime != null">
         total_sport_time = #{totalSportTime,jdbcType=INTEGER},
       </if>
-      <if test="totalKocal != null">
-        total_kocal = #{totalKocal,jdbcType=INTEGER},
+      <if test="totalKcal != null">
+        total_kcal = #{totalKcal,jdbcType=INTEGER},
       </if>
-      <if test="todaySportTime != null">
-        today_sport_time = #{todaySportTime,jdbcType=INTEGER},
+      <if test="todayKcal != null">
+        today_kcal = #{todayKcal,jdbcType=INTEGER},
       </if>
     </set>
     where uid = #{uid,jdbcType=INTEGER}
@@ -75,8 +75,8 @@
   <update id="updateByPrimaryKey" parameterType="com.yaoyili.model.UserSportInfo">
     update user_sport_info
     set total_sport_time = #{totalSportTime,jdbcType=INTEGER},
-      total_kocal = #{totalKocal,jdbcType=INTEGER},
-      today_sport_time = #{todaySportTime,jdbcType=INTEGER}
+      total_kcal = #{totalKcal,jdbcType=INTEGER},
+      today_kcal = total_kcal#{todayKcal,jdbcType=INTEGER}
     where uid = #{uid,jdbcType=INTEGER}
   </update>
 </mapper>

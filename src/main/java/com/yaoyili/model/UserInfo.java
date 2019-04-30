@@ -13,6 +13,14 @@ public class UserInfo {
 
     private String photoUrl;
 
+    public UserInfo(Integer uid, String name, Date bothday, String city, String photoUrl) {
+        this.uid = uid;
+        this.name = name;
+        this.bothday = bothday;
+        this.city = city;
+        this.photoUrl = photoUrl;
+    }
+
     public Integer getUid() {
         return uid;
     }

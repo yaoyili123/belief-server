@@ -9,7 +9,7 @@ import java.util.List;
 @Mapper
 public interface UserJoinClassMapper {
 
-    List<UserJoinClass> getClassesbyUser(@Param("uid") Integer uid);
+    List<Integer> getClassesbyUser(@Param("uid") Integer uid);
 
     int deleteByPrimaryKey(UserJoinClass key);
 

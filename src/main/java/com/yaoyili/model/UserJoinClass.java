@@ -5,6 +5,11 @@ public class UserJoinClass {
 
     private Integer scid;
 
+    public UserJoinClass(Integer uid, Integer scid) {
+        this.uid = uid;
+        this.scid = scid;
+    }
+
     public Integer getUid() {
         return uid;
     }
