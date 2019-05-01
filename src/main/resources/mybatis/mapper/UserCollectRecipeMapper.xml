@@ -5,6 +5,12 @@
     <id column="uid" jdbcType="INTEGER" property="uid" />
     <id column="repid" jdbcType="INTEGER" property="repid" />
   </resultMap>
+
+
+  <select id="getRecipesByUser" parameterType="java.lang.Integer" resultType="Integer">
+    SELECT repid FROM user_collect_recipe WHERE uid = #{uid, jdbcType=INTEGER}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="com.yaoyili.model.UserCollectRecipe">
     delete from user_collect_recipe
     where uid = #{uid,jdbcType=INTEGER}

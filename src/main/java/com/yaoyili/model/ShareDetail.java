@@ -5,6 +5,14 @@ public class ShareDetail {
 
     private String detail;
 
+    public ShareDetail() {
+    }
+
+    public ShareDetail(Integer sid, String detail) {
+        this.sid = sid;
+        this.detail = detail;
+    }
+
     public Integer getSid() {
         return sid;
     }

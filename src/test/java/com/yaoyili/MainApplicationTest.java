@@ -53,5 +53,4 @@ public class MainApplicationTest {
                         new UserKcalTrend(1, 0, new Date(System.currentTimeMillis()))), null);
 
     }
-
 }

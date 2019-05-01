@@ -9,6 +9,9 @@ public class UserSportInfo {
 
     private Integer todayKcal;
 
+    public UserSportInfo() {
+    }
+
     public UserSportInfo(Integer uid, Integer totalSportTime, Integer totalKocal, Integer todaykocal) {
         this.uid = uid;
         this.totalSportTime = totalSportTime;

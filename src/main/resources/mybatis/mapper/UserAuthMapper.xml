@@ -22,10 +22,12 @@
     from user_auth
     where username = #{username,jdbcType=INTEGER}
   </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from user_auth
     where uid = #{uid,jdbcType=INTEGER}
   </delete>
+
   <insert id="insert" parameterType="com.yaoyili.model.UserAuth">
     insert into user_auth (uid, username, password
       )

@@ -13,6 +13,9 @@ public class UserInfo {
 
     private String photoUrl;
 
+    public UserInfo() {
+    }
+
     public UserInfo(Integer uid, String name, Date bothday, String city, String photoUrl) {
         this.uid = uid;
         this.name = name;

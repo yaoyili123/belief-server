@@ -5,6 +5,14 @@ public class UserCollectRecipe {
 
     private Integer repid;
 
+    public UserCollectRecipe() {
+    }
+
+    public UserCollectRecipe(Integer uid, Integer repid) {
+        this.uid = uid;
+        this.repid = repid;
+    }
+
     public Integer getUid() {
         return uid;
     }

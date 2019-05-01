@@ -1,13 +1,11 @@
 package com.yaoyili.controller;
 
-import com.yaoyili.model.ResponseWrapper;
-import com.yaoyili.model.UserAuth;
+import com.yaoyili.model.*;
 import com.yaoyili.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/user")
@@ -16,7 +14,7 @@ public class UserController {
     @Autowired
     private UserServiceImpl userService;
 
-    @PostMapping(value = "/register")
+    @PostMapping(value = "register")
     public ResponseWrapper register(@RequestBody UserAuth userAuth) {
         int res = userService.register(userAuth);
         ResponseWrapper responseWrapper = null;
@@ -32,4 +30,23 @@ public class UserController {
         return responseWrapper;
     }
 
+    @GetMapping(value = "sport_info/{uid}")
+    public UserSportInfo getSportInfo(@PathVariable(value = "uid") Integer uid) {
+        return userService.getSportInfo(uid);
+    }
+
+    @PutMapping(value = "user_info")
+    public void updateUserInfo(@RequestBody UserInfo userInfo) {
+        userService.updateUserInfo(userInfo);
+    }
+
+    @GetMapping(value = "user_info/{uid}")
+    public UserInfo getUserInfo(@PathVariable(value = "uid") Integer uid) {
+        return userService.getUserInfo(uid);
+    }
+
+    @GetMapping(value = "kcal_trend/{uid}/{type}")
+    public List<UserKcalTrend> getKcalTrand(@PathVariable(value = "uid")int uid, @PathVariable(value = "type")int type) {
+        return userService.getKcalTrand(uid, type);
+    }
 }
