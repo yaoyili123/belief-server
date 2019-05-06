@@ -11,6 +11,8 @@ public interface UserService {
 
     int register(UserAuth userAuth);
 
+    int login(UserAuth userAuth);
+
     UserSportInfo getSportInfo(int uid);
 
     UserInfo getUserInfo(int uid);

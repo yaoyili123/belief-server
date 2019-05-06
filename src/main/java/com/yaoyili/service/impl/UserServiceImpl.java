@@ -47,6 +47,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public int login(UserAuth userAuth) {
+        if (userAuthMapper.isRepeated(userAuth.getUsername()) == null)
+            return 1;
+        if (userAuthMapper.authUser(userAuth) == null)
+            return 2;
+        return 0;
+    }
+
+    @Override
     public UserSportInfo getSportInfo(int uid) {
         return userSportInfoMapper.selectByPrimaryKey(uid);
     }

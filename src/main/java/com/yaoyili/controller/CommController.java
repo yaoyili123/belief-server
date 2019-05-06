@@ -18,11 +18,14 @@ public class CommController {
 
     @GetMapping(value = "share_list")
     public List<ShareInfo> getShareList() {
+
         return commService.getShareList();
     }
 
     @PostMapping(value = "share")
-    public void publishShare(@RequestBody RequestShare share) {
+    public String publishShare(@RequestBody RequestShare share) {
+
         commService.publishShare(share);
+        return "success";
     }
 }

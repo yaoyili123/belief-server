@@ -20,12 +20,14 @@ public class RecipeController {
     }
 
     @PutMapping(value = "collects/{uid}/{rid}")
-    public void addRecipe(@PathVariable(value = "uid")int uid, @PathVariable(value = "rid")int rid) {
+    public String addRecipe(@PathVariable(value = "uid")int uid, @PathVariable(value = "rid")int rid) {
         recipeService.addRecipe(uid, rid);
+        return "success";
     }
 
     @DeleteMapping(value = "collects/{uid}/{rid}")
-    public void deleteRecipe(@PathVariable(value = "uid")int uid, @PathVariable(value = "rid")int rid) {
+    public String deleteRecipe(@PathVariable(value = "uid")int uid, @PathVariable(value = "rid")int rid) {
         recipeService.deleteRecipe(uid, rid);
+        return "success";
     }
 }

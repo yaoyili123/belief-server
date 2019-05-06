@@ -24,13 +24,15 @@ public class SportController {
     }
 
     @PostMapping(value = "add_class/{uid}")
-    public void addClassToUser(@PathVariable("uid") Integer uid, @RequestBody List<Integer> classList) {
+    public String addClassToUser(@PathVariable("uid") Integer uid, @RequestBody List<Integer> classList) {
         sportService.addClassToUser(uid, classList);
+        return "success";
     }
 
     @PutMapping(value = "/settle/{uid}/{kcal}/{time}")
-    public void settleKcal(@PathVariable("uid") int uid, @PathVariable("kcal") int kcal,
+    public String settleKcal(@PathVariable("uid") int uid, @PathVariable("kcal") int kcal,
                            @PathVariable("time") int time) {
         sportService.settleKcal(uid, kcal, time);
+        return "success";
     }
 }

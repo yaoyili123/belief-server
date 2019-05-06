@@ -20,7 +20,14 @@
     select
     <include refid="Base_Column_List" />
     from user_auth
-    where username = #{username,jdbcType=INTEGER}
+    where username = #{username,jdbcType=VARCHAR}
+  </select>
+
+  <select id="authUser" parameterType="UserAuth" resultMap="UserAuthResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user_auth
+    where username = #{username,jdbcType=VARCHAR} and password = #{password,jdbcType=VARCHAR}
   </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">

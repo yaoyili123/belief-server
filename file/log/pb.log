@@ -1,96 +1,660 @@
-2019-05-01 10:20:06.459  INFO 33000 --- [restartedMain] com.yaoyili.MainApplication              : No active profile set, falling back to default profiles: default
-2019-05-01 10:20:09.040  INFO 33000 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-05-01 10:20:09.054  INFO 33000 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-05-01 10:20:09.115  INFO 33000 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13ms. Found 0 repository interfaces.
-2019-05-01 10:20:09.901  INFO 33000 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9348b072-d577-3e99-bca5-f44669d8e4b1
-2019-05-01 10:20:09.983  INFO 33000 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d7d9c757] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-05-01 10:20:10.044  INFO 33000 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f3f3ca54] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-05-01 10:20:11.729  INFO 33000 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-05-01 10:20:11.776  INFO 33000 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-05-01 10:20:11.777  INFO 33000 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
-2019-05-01 10:20:11.794  INFO 33000 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
-2019-05-01 10:20:11.794  INFO 33000 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2019-05-01 10:20:11.794  INFO 33000 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2019-05-01 10:20:12.906  INFO 33000 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
-2019-05-01 10:20:13.165  INFO 33000 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-05-01 10:20:13.165 DEBUG 33000 --- [restartedMain] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
-2019-05-01 10:20:13.165  INFO 33000 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 6520 ms
-2019-05-01 10:20:15.069  INFO 33000 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
-2019-05-01 10:20:15.070  INFO 33000 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
-2019-05-01 10:20:15.070  INFO 33000 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
-2019-05-01 10:20:15.070  INFO 33000 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
-2019-05-01 10:20:15.070  INFO 33000 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
-2019-05-01 10:20:15.071  INFO 33000 --- [restartedMain] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
-2019-05-01 10:20:15.071  INFO 33000 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
-2019-05-01 10:20:15.071  INFO 33000 --- [restartedMain] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
-2019-05-01 10:20:16.228  INFO 33000 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+2019-05-06 20:28:11.680  INFO 8860 --- [restartedMain] com.yaoyili.MainApplication              : No active profile set, falling back to default profiles: default
+2019-05-06 20:28:14.610  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-05-06 20:28:14.629  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-06 20:28:14.700  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 0 repository interfaces.
+2019-05-06 20:28:15.638  INFO 8860 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9348b072-d577-3e99-bca5-f44669d8e4b1
+2019-05-06 20:28:15.787  INFO 8860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$158de5f5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:28:15.878  INFO 8860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$31a7e8f2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:28:17.896  INFO 8860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-06 20:28:18.002  INFO 8860 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-06 20:28:18.002  INFO 8860 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-05-06 20:28:18.028  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+2019-05-06 20:28:18.029  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-05-06 20:28:18.029  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-05-06 20:28:19.254  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+2019-05-06 20:28:19.556  INFO 8860 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-06 20:28:19.557 DEBUG 8860 --- [restartedMain] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-05-06 20:28:19.557  INFO 8860 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 7817 ms
+2019-05-06 20:28:24.405  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-05-06 20:28:24.406  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-05-06 20:28:24.407  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-05-06 20:28:24.407  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-05-06 20:28:24.407  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-05-06 20:28:24.408  INFO 8860 --- [restartedMain] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-05-06 20:28:24.408  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2019-05-06 20:28:24.408  INFO 8860 --- [restartedMain] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-05-06 20:28:26.678  INFO 8860 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: e34ebd67-8f37-4c7b-a1d7-9dfd984b35ba
+Using generated security password: b2ed4dc1-f739-4d2d-acac-baa0d84fa6f0
 
-2019-05-01 10:20:16.380  INFO 33000 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@41af728c, org.springframework.security.web.context.SecurityContextPersistenceFilter@5a364a5f, org.springframework.security.web.header.HeaderWriterFilter@77513252, org.springframework.security.web.authentication.logout.LogoutFilter@3425519a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5a8c546f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4e36a3f1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2407c7fd, org.springframework.security.web.session.SessionManagementFilter@3bec848f, org.springframework.security.web.access.ExceptionTranslationFilter@21b810c7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6954ad3e]
-2019-05-01 10:20:16.502 DEBUG 33000 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
-2019-05-01 10:20:16.834  INFO 33000 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-05-01 10:20:16.861 DEBUG 33000 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice
-2019-05-01 10:20:16.970 DEBUG 33000 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 16 mappings in 'requestMappingHandlerMapping'
-2019-05-01 10:20:16.983 DEBUG 33000 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2019-05-01 10:20:17.002 DEBUG 33000 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2019-05-01 10:20:17.621  INFO 33000 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2019-05-01 10:20:17.743  INFO 33000 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-05-01 10:20:18.309  INFO 33000 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-05-01 10:20:18.314  INFO 33000 --- [restartedMain] com.yaoyili.MainApplication              : Started MainApplication in 15.649 seconds (JVM running for 18.134)
-2019-05-01 10:21:17.090  INFO 33000 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-05-01 10:21:17.091  INFO 33000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-05-01 10:21:17.091 DEBUG 33000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2019-05-01 10:21:17.105 DEBUG 33000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2019-05-01 10:21:17.105  INFO 33000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
-2019-05-01 10:21:17.136 DEBUG 33000 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public void com.yaoyili.controller.CommController.publishShare(com.yaoyili.model.RequestShare)
-2019-05-01 10:21:17.183 DEBUG 33000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/comm/share", parameters={}
-2019-05-01 10:21:17.187 DEBUG 33000 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public void com.yaoyili.controller.CommController.publishShare(com.yaoyili.model.RequestShare)
-2019-05-01 10:21:17.500 DEBUG 33000 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.yaoyili.model.RequestShare@1ba66dc9]
-2019-05-01 10:21:17.582  INFO 33000 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : DatebookHikariCP - Starting...
-2019-05-01 10:21:17.834  INFO 33000 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : DatebookHikariCP - Start completed.
-2019-05-01 10:21:17.843 DEBUG 33000 --- [http-nio-8080-exec-1] c.y.dao.ShareInfoMapper.insertSelective  : ==>  Preparing: insert into share_info ( uid, title, photo_url ) values ( ?, ?, ? ) 
-2019-05-01 10:21:17.872 DEBUG 33000 --- [http-nio-8080-exec-1] c.y.dao.ShareInfoMapper.insertSelective  : ==> Parameters: 1(Integer), senjiang(String), (String)
-2019-05-01 10:21:17.879 DEBUG 33000 --- [http-nio-8080-exec-1] c.y.dao.ShareInfoMapper.insertSelective  : <==    Updates: 1
-2019-05-01 10:21:17.889 DEBUG 33000 --- [http-nio-8080-exec-1] c.y.d.ShareDetailMapper.insertSelective  : ==>  Preparing: insert into share_detail ( sid, detail ) values ( ?, ? ) 
-2019-05-01 10:21:17.889 DEBUG 33000 --- [http-nio-8080-exec-1] c.y.d.ShareDetailMapper.insertSelective  : ==> Parameters: 1(Integer), java.io.StringReader@176555f4(StringReader)
-2019-05-01 10:21:17.893 DEBUG 33000 --- [http-nio-8080-exec-1] c.y.d.ShareDetailMapper.insertSelective  : <==    Updates: 1
-2019-05-01 10:21:17.900 DEBUG 33000 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2019-05-01 10:21:17.900 DEBUG 33000 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
-2019-05-01 10:21:17.901 DEBUG 33000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2019-05-01 10:22:10.792 DEBUG 33000 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.util.List<com.yaoyili.model.ShareInfo> com.yaoyili.controller.CommController.getShareList()
-2019-05-01 10:22:10.796 DEBUG 33000 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/comm/share_list", parameters={}
-2019-05-01 10:22:10.798 DEBUG 33000 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.util.List<com.yaoyili.model.ShareInfo> com.yaoyili.controller.CommController.getShareList()
-2019-05-01 10:22:10.804 DEBUG 33000 --- [http-nio-8080-exec-2] com.yaoyili.dao.ShareInfoMapper.getAll   : ==>  Preparing: select * from share_info 
-2019-05-01 10:22:10.804 DEBUG 33000 --- [http-nio-8080-exec-2] com.yaoyili.dao.ShareInfoMapper.getAll   : ==> Parameters: 
-2019-05-01 10:22:11.090 DEBUG 33000 --- [http-nio-8080-exec-2] com.yaoyili.dao.ShareInfoMapper.getAll   : <==      Total: 1
-2019-05-01 10:22:11.096 DEBUG 33000 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2019-05-01 10:22:11.097 DEBUG 33000 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[com.yaoyili.model.ShareInfo@35b77584]]
-2019-05-01 10:22:11.131 DEBUG 33000 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2019-05-01 10:22:53.498 DEBUG 33000 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.util.List<java.lang.Integer> com.yaoyili.controller.RecipeController.getRecipes(int)
-2019-05-01 10:22:53.500 DEBUG 33000 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/recipe/collects/1", parameters={}
-2019-05-01 10:22:53.501 DEBUG 33000 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.util.List<java.lang.Integer> com.yaoyili.controller.RecipeController.getRecipes(int)
-2019-05-01 10:22:53.506 DEBUG 33000 --- [http-nio-8080-exec-3] c.y.d.U.getRecipesByUser                 : ==>  Preparing: SELECT repid FROM user_collect_recipe WHERE uid = ? 
-2019-05-01 10:22:53.506 DEBUG 33000 --- [http-nio-8080-exec-3] c.y.d.U.getRecipesByUser                 : ==> Parameters: 1(Integer)
-2019-05-01 10:22:53.509 DEBUG 33000 --- [http-nio-8080-exec-3] c.y.d.U.getRecipesByUser                 : <==      Total: 4
-2019-05-01 10:22:53.511 DEBUG 33000 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2019-05-01 10:22:53.511 DEBUG 33000 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[1, 2, 3, 4]]
-2019-05-01 10:22:53.513 DEBUG 33000 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2019-05-01 10:23:19.839 DEBUG 33000 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public void com.yaoyili.controller.RecipeController.addRecipe(int,int)
-2019-05-01 10:23:19.843 DEBUG 33000 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : PUT "/recipe/collects/1/5", parameters={}
-2019-05-01 10:23:19.844 DEBUG 33000 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public void com.yaoyili.controller.RecipeController.addRecipe(int,int)
-2019-05-01 10:23:19.846 DEBUG 33000 --- [http-nio-8080-exec-4] c.y.dao.UserCollectRecipeMapper.insert   : ==>  Preparing: insert into user_collect_recipe (uid, repid) values (?, ?) 
-2019-05-01 10:23:19.847 DEBUG 33000 --- [http-nio-8080-exec-4] c.y.dao.UserCollectRecipeMapper.insert   : ==> Parameters: 1(Integer), 5(Integer)
-2019-05-01 10:23:19.856 DEBUG 33000 --- [http-nio-8080-exec-4] c.y.dao.UserCollectRecipeMapper.insert   : <==    Updates: 1
-2019-05-01 10:23:19.857 DEBUG 33000 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2019-05-01 10:23:19.858 DEBUG 33000 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
-2019-05-01 10:23:19.858 DEBUG 33000 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2019-05-01 10:24:05.989 DEBUG 33000 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public void com.yaoyili.controller.RecipeController.deleteRecipe(int,int)
-2019-05-01 10:24:05.992 DEBUG 33000 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : DELETE "/recipe/collects/1/5", parameters={}
-2019-05-01 10:24:05.992 DEBUG 33000 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public void com.yaoyili.controller.RecipeController.deleteRecipe(int,int)
-2019-05-01 10:24:05.993 DEBUG 33000 --- [http-nio-8080-exec-5] c.y.d.U.deleteByPrimaryKey               : ==>  Preparing: delete from user_collect_recipe where uid = ? and repid = ? 
-2019-05-01 10:24:05.993 DEBUG 33000 --- [http-nio-8080-exec-5] c.y.d.U.deleteByPrimaryKey               : ==> Parameters: 1(Integer), 5(Integer)
-2019-05-01 10:24:05.997 DEBUG 33000 --- [http-nio-8080-exec-5] c.y.d.U.deleteByPrimaryKey               : <==    Updates: 1
-2019-05-01 10:24:05.998 DEBUG 33000 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2019-05-01 10:24:05.998 DEBUG 33000 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
-2019-05-01 10:24:05.998 DEBUG 33000 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-05-06 20:28:27.060  INFO 8860 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1deec23a, org.springframework.security.web.context.SecurityContextPersistenceFilter@3a0f1f55, org.springframework.security.web.header.HeaderWriterFilter@fa29118, org.springframework.security.web.authentication.logout.LogoutFilter@17e16d37, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9e401b7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6d54b470, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@47f7b874, org.springframework.security.web.session.SessionManagementFilter@73bd4101, org.springframework.security.web.access.ExceptionTranslationFilter@4255f24d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@273ce597]
+2019-05-06 20:28:27.228 DEBUG 8860 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-05-06 20:28:28.037  INFO 8860 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-06 20:28:28.066 DEBUG 8860 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice
+2019-05-06 20:28:28.269 DEBUG 8860 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2019-05-06 20:28:28.318 DEBUG 8860 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-05-06 20:28:28.336 DEBUG 8860 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-05-06 20:28:29.721  INFO 8860 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-05-06 20:28:30.551  INFO 8860 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-05-06 20:28:32.615  INFO 8860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-06 20:28:32.620  INFO 8860 --- [restartedMain] com.yaoyili.MainApplication              : Started MainApplication in 24.693 seconds (JVM running for 28.55)
+2019-05-06 20:28:35.868  INFO 8860 --- [Thread-10] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-06 20:28:38.298  INFO 8860 --- [restartedMain] com.yaoyili.MainApplication              : No active profile set, falling back to default profiles: default
+2019-05-06 20:28:40.246  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-05-06 20:28:40.252  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-06 20:28:40.258  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5ms. Found 0 repository interfaces.
+2019-05-06 20:28:40.362  INFO 8860 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=af821fee-3d9c-3e29-8fe2-45165b1efbec
+2019-05-06 20:28:40.425  INFO 8860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$158de5f5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:28:40.431  INFO 8860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$31a7e8f2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:28:40.764  INFO 8860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-06 20:28:40.770  INFO 8860 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-06 20:28:40.770  INFO 8860 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-05-06 20:28:40.771  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+2019-05-06 20:28:40.771  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-05-06 20:28:40.771  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-05-06 20:28:40.772  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+2019-05-06 20:28:40.810  INFO 8860 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-06 20:28:40.810 DEBUG 8860 --- [restartedMain] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-05-06 20:28:40.810  INFO 8860 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2509 ms
+2019-05-06 20:28:41.402  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-05-06 20:28:41.402  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-05-06 20:28:41.402  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-05-06 20:28:41.402  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-05-06 20:28:41.403  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-05-06 20:28:41.403  INFO 8860 --- [restartedMain] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-05-06 20:28:41.403  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2019-05-06 20:28:41.403  INFO 8860 --- [restartedMain] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-05-06 20:28:41.857  INFO 8860 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: c6ff9eaf-d282-4967-8b22-0a06cf701c01
+
+2019-05-06 20:28:41.887  INFO 8860 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2f3b28a, org.springframework.security.web.context.SecurityContextPersistenceFilter@63d4fcbc, org.springframework.security.web.header.HeaderWriterFilter@34ddf8ea, org.springframework.security.web.authentication.logout.LogoutFilter@10bff4e6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@71b4479c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2a75ebe8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e09e4c6, org.springframework.security.web.session.SessionManagementFilter@1725baaa, org.springframework.security.web.access.ExceptionTranslationFilter@471abd1f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@36709ed5]
+2019-05-06 20:28:41.943 DEBUG 8860 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-05-06 20:28:41.997  INFO 8860 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-06 20:28:42.006 DEBUG 8860 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice
+2019-05-06 20:28:42.022 DEBUG 8860 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 11 mappings in 'requestMappingHandlerMapping'
+2019-05-06 20:28:42.028 DEBUG 8860 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-05-06 20:28:42.035 DEBUG 8860 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-05-06 20:28:42.401  INFO 8860 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-05-06 20:28:42.448  INFO 8860 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-05-06 20:28:43.052  INFO 8860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-06 20:28:43.054  INFO 8860 --- [restartedMain] com.yaoyili.MainApplication              : Started MainApplication in 6.162 seconds (JVM running for 38.986)
+2019-05-06 20:28:43.061  INFO 8860 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-05-06 20:28:49.098  INFO 8860 --- [Thread-15] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-06 20:28:50.687  INFO 8860 --- [restartedMain] com.yaoyili.MainApplication              : No active profile set, falling back to default profiles: default
+2019-05-06 20:28:51.280  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-05-06 20:28:51.280  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-06 20:28:51.285  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4ms. Found 0 repository interfaces.
+2019-05-06 20:28:51.348  INFO 8860 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9348b072-d577-3e99-bca5-f44669d8e4b1
+2019-05-06 20:28:51.373  INFO 8860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$158de5f5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:28:51.375  INFO 8860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$31a7e8f2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:28:51.548  INFO 8860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-06 20:28:51.549  INFO 8860 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-06 20:28:51.549  INFO 8860 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-05-06 20:28:51.550  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+2019-05-06 20:28:51.550  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-05-06 20:28:51.550  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-05-06 20:28:51.551  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+2019-05-06 20:28:51.574  INFO 8860 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-06 20:28:51.574 DEBUG 8860 --- [restartedMain] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-05-06 20:28:51.574  INFO 8860 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 884 ms
+2019-05-06 20:28:51.902  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-05-06 20:28:51.902  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-05-06 20:28:51.902  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-05-06 20:28:51.902  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-05-06 20:28:51.902  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-05-06 20:28:51.902  INFO 8860 --- [restartedMain] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-05-06 20:28:51.902  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2019-05-06 20:28:51.902  INFO 8860 --- [restartedMain] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-05-06 20:28:52.085  INFO 8860 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 854e03ee-8f0d-42e7-9d8c-1acf5ef7ed16
+
+2019-05-06 20:28:52.092  INFO 8860 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6cf51398, org.springframework.security.web.context.SecurityContextPersistenceFilter@8f5c65, org.springframework.security.web.header.HeaderWriterFilter@702352b9, org.springframework.security.web.authentication.logout.LogoutFilter@1295a892, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@46beb199, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2c62856d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1f90a0b1, org.springframework.security.web.session.SessionManagementFilter@11c5e182, org.springframework.security.web.access.ExceptionTranslationFilter@43e0a2f7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2d9acaa4]
+2019-05-06 20:28:52.152 DEBUG 8860 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-05-06 20:28:52.195  INFO 8860 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-06 20:28:52.202 DEBUG 8860 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice
+2019-05-06 20:28:52.220 DEBUG 8860 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2019-05-06 20:28:52.225 DEBUG 8860 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-05-06 20:28:52.231 DEBUG 8860 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-05-06 20:28:52.403  INFO 8860 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-05-06 20:28:52.446  INFO 8860 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-05-06 20:28:52.875  INFO 8860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-06 20:28:52.877  INFO 8860 --- [restartedMain] com.yaoyili.MainApplication              : Started MainApplication in 3.246 seconds (JVM running for 48.809)
+2019-05-06 20:28:52.882  INFO 8860 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-05-06 20:29:10.127  INFO 8860 --- [Thread-26] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-06 20:29:11.979  INFO 8860 --- [restartedMain] com.yaoyili.MainApplication              : No active profile set, falling back to default profiles: default
+2019-05-06 20:29:13.234  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-05-06 20:29:13.234  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-06 20:29:13.239  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5ms. Found 0 repository interfaces.
+2019-05-06 20:29:13.366  INFO 8860 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1a6627f5-f543-3b26-ad65-ef99e210d12b
+2019-05-06 20:29:13.426  INFO 8860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$158de5f5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:29:13.429  INFO 8860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$31a7e8f2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:29:13.878  INFO 8860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-06 20:29:13.879  INFO 8860 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-06 20:29:13.879  INFO 8860 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-05-06 20:29:13.880  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+2019-05-06 20:29:13.880  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-05-06 20:29:13.880  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-05-06 20:29:13.880  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+2019-05-06 20:29:13.906  INFO 8860 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-06 20:29:13.906 DEBUG 8860 --- [restartedMain] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-05-06 20:29:13.906  INFO 8860 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1923 ms
+2019-05-06 20:29:14.417  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-05-06 20:29:14.417  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-05-06 20:29:14.417  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-05-06 20:29:14.417  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-05-06 20:29:14.417  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-05-06 20:29:14.417  INFO 8860 --- [restartedMain] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-05-06 20:29:14.418  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2019-05-06 20:29:14.418  INFO 8860 --- [restartedMain] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-05-06 20:29:14.683  INFO 8860 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: fbfabeba-3ba3-4717-84ea-8166c1ea3564
+
+2019-05-06 20:29:14.698  INFO 8860 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6e4dd606, org.springframework.security.web.context.SecurityContextPersistenceFilter@2ac60dc6, org.springframework.security.web.header.HeaderWriterFilter@1805bcdc, org.springframework.security.web.authentication.logout.LogoutFilter@6caa012, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@23cee82b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@161843d2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5ca4305b, org.springframework.security.web.session.SessionManagementFilter@69df33b0, org.springframework.security.web.access.ExceptionTranslationFilter@778fc1d4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5e164fc8]
+2019-05-06 20:29:14.726 DEBUG 8860 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-05-06 20:29:14.767  INFO 8860 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-06 20:29:14.772 DEBUG 8860 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice
+2019-05-06 20:29:14.828 DEBUG 8860 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 15 mappings in 'requestMappingHandlerMapping'
+2019-05-06 20:29:14.835 DEBUG 8860 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-05-06 20:29:14.842 DEBUG 8860 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-05-06 20:29:15.230  INFO 8860 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-05-06 20:29:15.294  INFO 8860 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-05-06 20:29:15.811  INFO 8860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-06 20:29:15.812  INFO 8860 --- [restartedMain] com.yaoyili.MainApplication              : Started MainApplication in 5.195 seconds (JVM running for 71.744)
+2019-05-06 20:29:15.817  INFO 8860 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-05-06 20:29:19.794  INFO 8860 --- [Thread-37] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-06 20:29:21.822  INFO 8860 --- [restartedMain] com.yaoyili.MainApplication              : No active profile set, falling back to default profiles: default
+2019-05-06 20:29:22.795  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-05-06 20:29:22.923  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-06 20:29:22.928  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5ms. Found 0 repository interfaces.
+2019-05-06 20:29:22.991  INFO 8860 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9348b072-d577-3e99-bca5-f44669d8e4b1
+2019-05-06 20:29:23.013  INFO 8860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$158de5f5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:29:23.014  INFO 8860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$31a7e8f2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:29:23.213  INFO 8860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-06 20:29:23.214  INFO 8860 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-06 20:29:23.214  INFO 8860 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-05-06 20:29:23.215  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+2019-05-06 20:29:23.215  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-05-06 20:29:23.215  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-05-06 20:29:23.216  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+2019-05-06 20:29:23.264  INFO 8860 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-06 20:29:23.270 DEBUG 8860 --- [restartedMain] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-05-06 20:29:23.272  INFO 8860 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1448 ms
+2019-05-06 20:29:23.603  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-05-06 20:29:23.604  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-05-06 20:29:23.604  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-05-06 20:29:23.604  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-05-06 20:29:23.604  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-05-06 20:29:23.604  INFO 8860 --- [restartedMain] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-05-06 20:29:23.604  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2019-05-06 20:29:23.604  INFO 8860 --- [restartedMain] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-05-06 20:29:23.862  INFO 8860 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: c7397752-0a56-4267-bc8f-5295cfb696f8
+
+2019-05-06 20:29:23.891  INFO 8860 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7364e09c, org.springframework.security.web.context.SecurityContextPersistenceFilter@22494fab, org.springframework.security.web.header.HeaderWriterFilter@413a42c2, org.springframework.security.web.authentication.logout.LogoutFilter@56b26523, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5082fbf4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@43bd8f74, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@597ad4c6, org.springframework.security.web.session.SessionManagementFilter@74dc38d8, org.springframework.security.web.access.ExceptionTranslationFilter@5d35e18f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@364de7de]
+2019-05-06 20:29:23.941 DEBUG 8860 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-05-06 20:29:24.019  INFO 8860 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-06 20:29:24.025 DEBUG 8860 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice
+2019-05-06 20:29:24.047 DEBUG 8860 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2019-05-06 20:29:24.052 DEBUG 8860 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-05-06 20:29:24.059 DEBUG 8860 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-05-06 20:29:24.431  INFO 8860 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-05-06 20:29:24.511  INFO 8860 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-05-06 20:29:25.257  INFO 8860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-06 20:29:25.258  INFO 8860 --- [restartedMain] com.yaoyili.MainApplication              : Started MainApplication in 4.753 seconds (JVM running for 81.19)
+2019-05-06 20:29:25.262  INFO 8860 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-05-06 20:29:28.989  INFO 8860 --- [Thread-46] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-06 20:29:31.246  INFO 8860 --- [restartedMain] com.yaoyili.MainApplication              : No active profile set, falling back to default profiles: default
+2019-05-06 20:29:32.596  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-05-06 20:29:32.596  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-06 20:29:32.655  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59ms. Found 0 repository interfaces.
+2019-05-06 20:29:32.749  INFO 8860 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=45811b56-0d6b-3592-afff-c8a2ce0c54dd
+2019-05-06 20:29:32.820  INFO 8860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$158de5f5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:29:32.822  INFO 8860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$31a7e8f2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:29:33.071  INFO 8860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-06 20:29:33.072  INFO 8860 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-06 20:29:33.074  INFO 8860 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-05-06 20:29:33.075  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+2019-05-06 20:29:33.076  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-05-06 20:29:33.076  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-05-06 20:29:33.078  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+2019-05-06 20:29:33.105  INFO 8860 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-06 20:29:33.106 DEBUG 8860 --- [restartedMain] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-05-06 20:29:33.106  INFO 8860 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1856 ms
+2019-05-06 20:29:33.722  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-05-06 20:29:33.722  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-05-06 20:29:33.722  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-05-06 20:29:33.722  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-05-06 20:29:33.722  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-05-06 20:29:33.722  INFO 8860 --- [restartedMain] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-05-06 20:29:33.722  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2019-05-06 20:29:33.723  INFO 8860 --- [restartedMain] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-05-06 20:29:34.374  INFO 8860 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 3ebebc1b-294b-44d9-b92e-edd1b3af39a6
+
+2019-05-06 20:29:34.410  INFO 8860 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1fb4b3e1, org.springframework.security.web.context.SecurityContextPersistenceFilter@3e41ba40, org.springframework.security.web.header.HeaderWriterFilter@58b3f8b8, org.springframework.security.web.authentication.logout.LogoutFilter@cb40520, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6e2561e0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@291422a4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ba24251, org.springframework.security.web.session.SessionManagementFilter@48fdaf01, org.springframework.security.web.access.ExceptionTranslationFilter@5770e880, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@41d2f04c]
+2019-05-06 20:29:34.445 DEBUG 8860 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-05-06 20:29:34.499  INFO 8860 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-06 20:29:34.503 DEBUG 8860 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice
+2019-05-06 20:29:34.516 DEBUG 8860 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 14 mappings in 'requestMappingHandlerMapping'
+2019-05-06 20:29:34.520 DEBUG 8860 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-05-06 20:29:34.526 DEBUG 8860 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-05-06 20:29:34.661  INFO 8860 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-05-06 20:29:34.727  INFO 8860 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-05-06 20:29:35.386  INFO 8860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-06 20:29:35.387  INFO 8860 --- [restartedMain] com.yaoyili.MainApplication              : Started MainApplication in 5.782 seconds (JVM running for 91.319)
+2019-05-06 20:29:35.393  INFO 8860 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-05-06 20:29:38.206  INFO 8860 --- [Thread-55] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-06 20:29:39.982  INFO 8860 --- [restartedMain] com.yaoyili.MainApplication              : No active profile set, falling back to default profiles: default
+2019-05-06 20:29:40.331  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-05-06 20:29:40.331  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-06 20:29:40.335  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4ms. Found 0 repository interfaces.
+2019-05-06 20:29:40.372  INFO 8860 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9348b072-d577-3e99-bca5-f44669d8e4b1
+2019-05-06 20:29:40.388  INFO 8860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$158de5f5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:29:40.390  INFO 8860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$31a7e8f2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:29:40.496  INFO 8860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-06 20:29:40.497  INFO 8860 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-06 20:29:40.497  INFO 8860 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-05-06 20:29:40.497  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+2019-05-06 20:29:40.497  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-05-06 20:29:40.497  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-05-06 20:29:40.498  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+2019-05-06 20:29:40.527  INFO 8860 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-06 20:29:40.527 DEBUG 8860 --- [restartedMain] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-05-06 20:29:40.527  INFO 8860 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 543 ms
+2019-05-06 20:29:40.810  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-05-06 20:29:40.811  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-05-06 20:29:40.811  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-05-06 20:29:40.811  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-05-06 20:29:40.811  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-05-06 20:29:40.811  INFO 8860 --- [restartedMain] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-05-06 20:29:40.812  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2019-05-06 20:29:40.812  INFO 8860 --- [restartedMain] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-05-06 20:29:41.177  INFO 8860 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 5d422771-1fcf-4f1c-b400-79101cb49f7b
+
+2019-05-06 20:29:41.183  INFO 8860 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@22d84369, org.springframework.security.web.context.SecurityContextPersistenceFilter@614de993, org.springframework.security.web.header.HeaderWriterFilter@67da8dc4, org.springframework.security.web.authentication.logout.LogoutFilter@3e430726, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@413ec403, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7239c54d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@47d6e504, org.springframework.security.web.session.SessionManagementFilter@4e604ad6, org.springframework.security.web.access.ExceptionTranslationFilter@2d81aa4b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@20aba973]
+2019-05-06 20:29:41.204 DEBUG 8860 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-05-06 20:29:41.233  INFO 8860 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-06 20:29:41.237 DEBUG 8860 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice
+2019-05-06 20:29:41.252 DEBUG 8860 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2019-05-06 20:29:41.257 DEBUG 8860 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-05-06 20:29:41.261 DEBUG 8860 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-05-06 20:29:41.377  INFO 8860 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-05-06 20:29:41.411  INFO 8860 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-05-06 20:29:41.829  INFO 8860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-06 20:29:41.830  INFO 8860 --- [restartedMain] com.yaoyili.MainApplication              : Started MainApplication in 2.898 seconds (JVM running for 97.762)
+2019-05-06 20:29:41.833  INFO 8860 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-05-06 20:29:48.942  INFO 8860 --- [Thread-64] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-06 20:29:50.771  INFO 8860 --- [restartedMain] com.yaoyili.MainApplication              : No active profile set, falling back to default profiles: default
+2019-05-06 20:29:51.227  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-05-06 20:29:51.227  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-06 20:29:51.240  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13ms. Found 0 repository interfaces.
+2019-05-06 20:29:51.311  INFO 8860 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e886583f-6114-3335-80b8-24025df706b0
+2019-05-06 20:29:51.330  INFO 8860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$158de5f5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:29:51.331  INFO 8860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$31a7e8f2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:29:51.449  INFO 8860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-06 20:29:51.450  INFO 8860 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-06 20:29:51.450  INFO 8860 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-05-06 20:29:51.451  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+2019-05-06 20:29:51.451  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-05-06 20:29:51.451  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-05-06 20:29:51.452  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+2019-05-06 20:29:51.475  INFO 8860 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-06 20:29:51.475 DEBUG 8860 --- [restartedMain] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-05-06 20:29:51.475  INFO 8860 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 702 ms
+2019-05-06 20:29:51.702  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-05-06 20:29:51.702  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-05-06 20:29:51.702  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-05-06 20:29:51.702  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-05-06 20:29:51.702  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-05-06 20:29:51.702  INFO 8860 --- [restartedMain] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-05-06 20:29:51.702  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2019-05-06 20:29:51.702  INFO 8860 --- [restartedMain] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-05-06 20:29:51.831  INFO 8860 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 2ca462bd-93d2-4519-9a6a-4d37878df64b
+
+2019-05-06 20:29:51.842  INFO 8860 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@59e62772, org.springframework.security.web.context.SecurityContextPersistenceFilter@54b308c9, org.springframework.security.web.header.HeaderWriterFilter@ce4b1ac, org.springframework.security.web.authentication.logout.LogoutFilter@649c94ca, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3b64850f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@12a43a1e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@320a7cc6, org.springframework.security.web.session.SessionManagementFilter@1d5d6272, org.springframework.security.web.access.ExceptionTranslationFilter@558757ff, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@51645e5f]
+2019-05-06 20:29:51.890 DEBUG 8860 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-05-06 20:29:51.951  INFO 8860 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-06 20:29:51.963 DEBUG 8860 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice
+2019-05-06 20:29:51.978 DEBUG 8860 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 13 mappings in 'requestMappingHandlerMapping'
+2019-05-06 20:29:51.990 DEBUG 8860 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-05-06 20:29:52.004 DEBUG 8860 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-05-06 20:29:52.293  INFO 8860 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-05-06 20:29:52.337  INFO 8860 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-05-06 20:29:53.164  INFO 8860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-06 20:29:53.177  INFO 8860 --- [restartedMain] com.yaoyili.MainApplication              : Started MainApplication in 3.524 seconds (JVM running for 109.108)
+2019-05-06 20:29:53.181  INFO 8860 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-05-06 20:30:02.098  INFO 8860 --- [Thread-73] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-06 20:30:03.857  INFO 8860 --- [restartedMain] com.yaoyili.MainApplication              : No active profile set, falling back to default profiles: default
+2019-05-06 20:30:04.212  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-05-06 20:30:04.212  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-06 20:30:04.216  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3ms. Found 0 repository interfaces.
+2019-05-06 20:30:04.251  INFO 8860 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9348b072-d577-3e99-bca5-f44669d8e4b1
+2019-05-06 20:30:04.266  INFO 8860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$158de5f5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:30:04.267  INFO 8860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$31a7e8f2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:30:04.364  INFO 8860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-06 20:30:04.365  INFO 8860 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-06 20:30:04.366  INFO 8860 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-05-06 20:30:04.366  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+2019-05-06 20:30:04.367  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-05-06 20:30:04.367  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-05-06 20:30:04.368  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+2019-05-06 20:30:04.389  INFO 8860 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-06 20:30:04.389 DEBUG 8860 --- [restartedMain] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-05-06 20:30:04.390  INFO 8860 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 531 ms
+2019-05-06 20:30:04.632  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-05-06 20:30:04.632  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-05-06 20:30:04.632  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-05-06 20:30:04.632  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-05-06 20:30:04.632  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-05-06 20:30:04.632  INFO 8860 --- [restartedMain] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-05-06 20:30:04.632  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2019-05-06 20:30:04.632  INFO 8860 --- [restartedMain] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-05-06 20:30:04.762  INFO 8860 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 524fb8bf-f358-4a66-91e6-fb42c1545d6b
+
+2019-05-06 20:30:04.769  INFO 8860 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@216cabeb, org.springframework.security.web.context.SecurityContextPersistenceFilter@3a52d549, org.springframework.security.web.header.HeaderWriterFilter@33f379af, org.springframework.security.web.authentication.logout.LogoutFilter@7d330466, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@487dc754, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@60ebf1f5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@16cdfd9e, org.springframework.security.web.session.SessionManagementFilter@38a4bc22, org.springframework.security.web.access.ExceptionTranslationFilter@3fd9a08f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4ee54a58]
+2019-05-06 20:30:04.790 DEBUG 8860 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-05-06 20:30:04.825  INFO 8860 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-06 20:30:04.830 DEBUG 8860 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice
+2019-05-06 20:30:04.853 DEBUG 8860 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2019-05-06 20:30:04.857 DEBUG 8860 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-05-06 20:30:04.864 DEBUG 8860 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-05-06 20:30:04.983  INFO 8860 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-05-06 20:30:05.009  INFO 8860 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-05-06 20:30:05.449  INFO 8860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-06 20:30:05.449  INFO 8860 --- [restartedMain] com.yaoyili.MainApplication              : Started MainApplication in 2.448 seconds (JVM running for 121.381)
+2019-05-06 20:30:05.453  INFO 8860 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-05-06 20:32:13.082  INFO 8860 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-05-06 20:32:13.083  INFO 8860 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-05-06 20:32:13.084 DEBUG 8860 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2019-05-06 20:32:13.095 DEBUG 8860 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-05-06 20:32:13.095  INFO 8860 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2019-05-06 20:32:13.121 DEBUG 8860 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.yaoyili.model.ResponseWrapper com.yaoyili.controller.UserController.login(com.yaoyili.model.UserAuth)
+2019-05-06 20:32:13.166 DEBUG 8860 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/user/login", parameters={}
+2019-05-06 20:32:13.169 DEBUG 8860 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.yaoyili.model.ResponseWrapper com.yaoyili.controller.UserController.login(com.yaoyili.model.UserAuth)
+2019-05-06 20:32:13.368 DEBUG 8860 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.yaoyili.model.UserAuth@48ff1ebf]
+2019-05-06 20:32:13.499  INFO 8860 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : DatebookHikariCP - Starting...
+2019-05-06 20:32:13.814  INFO 8860 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : DatebookHikariCP - Start completed.
+2019-05-06 20:32:13.821 DEBUG 8860 --- [http-nio-8080-exec-2] c.yaoyili.dao.UserAuthMapper.isRepeated  : ==>  Preparing: select uid, username, password from user_auth where username = ? 
+2019-05-06 20:32:13.850 DEBUG 8860 --- [http-nio-8080-exec-2] c.yaoyili.dao.UserAuthMapper.isRepeated  : ==> Parameters: yaoyili(String)
+2019-05-06 20:32:13.900 DEBUG 8860 --- [http-nio-8080-exec-2] c.yaoyili.dao.UserAuthMapper.isRepeated  : <==      Total: 1
+2019-05-06 20:32:13.906 DEBUG 8860 --- [http-nio-8080-exec-2] com.yaoyili.dao.UserAuthMapper.authUser  : ==>  Preparing: select uid, username, password from user_auth where username = ? and password = ? 
+2019-05-06 20:32:13.906 DEBUG 8860 --- [http-nio-8080-exec-2] com.yaoyili.dao.UserAuthMapper.authUser  : ==> Parameters: yaoyili(String), 123456(String)
+2019-05-06 20:32:13.907 DEBUG 8860 --- [http-nio-8080-exec-2] com.yaoyili.dao.UserAuthMapper.authUser  : <==      Total: 1
+2019-05-06 20:32:13.937 DEBUG 8860 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2019-05-06 20:32:13.938 DEBUG 8860 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.yaoyili.model.ResponseWrapper@d70a52f]
+2019-05-06 20:32:13.956 DEBUG 8860 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-05-06 20:32:20.587 DEBUG 8860 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.yaoyili.model.ResponseWrapper com.yaoyili.controller.UserController.login(com.yaoyili.model.UserAuth)
+2019-05-06 20:32:20.589 DEBUG 8860 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/user/login", parameters={}
+2019-05-06 20:32:20.592 DEBUG 8860 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.yaoyili.model.ResponseWrapper com.yaoyili.controller.UserController.login(com.yaoyili.model.UserAuth)
+2019-05-06 20:32:20.593 DEBUG 8860 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.yaoyili.model.UserAuth@3343c420]
+2019-05-06 20:32:20.595 DEBUG 8860 --- [http-nio-8080-exec-1] c.yaoyili.dao.UserAuthMapper.isRepeated  : ==>  Preparing: select uid, username, password from user_auth where username = ? 
+2019-05-06 20:32:20.595 DEBUG 8860 --- [http-nio-8080-exec-1] c.yaoyili.dao.UserAuthMapper.isRepeated  : ==> Parameters: yaoyili(String)
+2019-05-06 20:32:20.596 DEBUG 8860 --- [http-nio-8080-exec-1] c.yaoyili.dao.UserAuthMapper.isRepeated  : <==      Total: 1
+2019-05-06 20:32:20.597 DEBUG 8860 --- [http-nio-8080-exec-1] com.yaoyili.dao.UserAuthMapper.authUser  : ==>  Preparing: select uid, username, password from user_auth where username = ? and password = ? 
+2019-05-06 20:32:20.597 DEBUG 8860 --- [http-nio-8080-exec-1] com.yaoyili.dao.UserAuthMapper.authUser  : ==> Parameters: yaoyili(String), 123451(String)
+2019-05-06 20:32:20.598 DEBUG 8860 --- [http-nio-8080-exec-1] com.yaoyili.dao.UserAuthMapper.authUser  : <==      Total: 0
+2019-05-06 20:32:20.600 DEBUG 8860 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2019-05-06 20:32:20.600 DEBUG 8860 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.yaoyili.model.ResponseWrapper@e7a6936]
+2019-05-06 20:32:20.601 DEBUG 8860 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-05-06 20:32:23.500 DEBUG 8860 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.yaoyili.model.ResponseWrapper com.yaoyili.controller.UserController.login(com.yaoyili.model.UserAuth)
+2019-05-06 20:32:23.501 DEBUG 8860 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/user/login", parameters={}
+2019-05-06 20:32:23.501 DEBUG 8860 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.yaoyili.model.ResponseWrapper com.yaoyili.controller.UserController.login(com.yaoyili.model.UserAuth)
+2019-05-06 20:32:23.502 DEBUG 8860 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.yaoyili.model.UserAuth@5bab20d9]
+2019-05-06 20:32:23.503 DEBUG 8860 --- [http-nio-8080-exec-3] c.yaoyili.dao.UserAuthMapper.isRepeated  : ==>  Preparing: select uid, username, password from user_auth where username = ? 
+2019-05-06 20:32:23.504 DEBUG 8860 --- [http-nio-8080-exec-3] c.yaoyili.dao.UserAuthMapper.isRepeated  : ==> Parameters: yaoyili1(String)
+2019-05-06 20:32:23.504 DEBUG 8860 --- [http-nio-8080-exec-3] c.yaoyili.dao.UserAuthMapper.isRepeated  : <==      Total: 0
+2019-05-06 20:32:23.505 DEBUG 8860 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2019-05-06 20:32:23.505 DEBUG 8860 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.yaoyili.model.ResponseWrapper@1451dfe7]
+2019-05-06 20:32:23.506 DEBUG 8860 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-05-06 20:32:25.263 DEBUG 8860 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.yaoyili.model.ResponseWrapper com.yaoyili.controller.UserController.login(com.yaoyili.model.UserAuth)
+2019-05-06 20:32:25.264 DEBUG 8860 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/user/login", parameters={}
+2019-05-06 20:32:25.264 DEBUG 8860 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.yaoyili.model.ResponseWrapper com.yaoyili.controller.UserController.login(com.yaoyili.model.UserAuth)
+2019-05-06 20:32:25.265 DEBUG 8860 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.yaoyili.model.UserAuth@4e5a5f52]
+2019-05-06 20:32:25.266 DEBUG 8860 --- [http-nio-8080-exec-4] c.yaoyili.dao.UserAuthMapper.isRepeated  : ==>  Preparing: select uid, username, password from user_auth where username = ? 
+2019-05-06 20:32:25.266 DEBUG 8860 --- [http-nio-8080-exec-4] c.yaoyili.dao.UserAuthMapper.isRepeated  : ==> Parameters: yaoyili1(String)
+2019-05-06 20:32:25.267 DEBUG 8860 --- [http-nio-8080-exec-4] c.yaoyili.dao.UserAuthMapper.isRepeated  : <==      Total: 0
+2019-05-06 20:32:25.267 DEBUG 8860 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2019-05-06 20:32:25.268 DEBUG 8860 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.yaoyili.model.ResponseWrapper@1a0b2d2]
+2019-05-06 20:32:25.268 DEBUG 8860 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-05-06 20:32:54.381  INFO 8860 --- [Thread-82] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-06 20:32:54.390  INFO 8860 --- [Thread-82] com.zaxxer.hikari.HikariDataSource       : DatebookHikariCP - Shutdown initiated...
+2019-05-06 20:32:54.401  INFO 8860 --- [Thread-82] com.zaxxer.hikari.HikariDataSource       : DatebookHikariCP - Shutdown completed.
+2019-05-06 20:32:57.632  INFO 8860 --- [restartedMain] com.yaoyili.MainApplication              : No active profile set, falling back to default profiles: default
+2019-05-06 20:32:58.831  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-05-06 20:32:58.831  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-06 20:32:58.838  INFO 8860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7ms. Found 0 repository interfaces.
+2019-05-06 20:32:58.918  INFO 8860 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9348b072-d577-3e99-bca5-f44669d8e4b1
+2019-05-06 20:32:58.935  INFO 8860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$158de5f5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:32:58.937  INFO 8860 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$31a7e8f2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:32:59.133  INFO 8860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-06 20:32:59.134  INFO 8860 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-06 20:32:59.134  INFO 8860 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-05-06 20:32:59.134  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+2019-05-06 20:32:59.134  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-05-06 20:32:59.134  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-05-06 20:32:59.135  INFO 8860 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+2019-05-06 20:32:59.252  INFO 8860 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-06 20:32:59.252 DEBUG 8860 --- [restartedMain] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-05-06 20:32:59.252  INFO 8860 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1588 ms
+2019-05-06 20:32:59.480  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-05-06 20:32:59.480  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-05-06 20:32:59.480  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-05-06 20:32:59.480  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-05-06 20:32:59.481  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-05-06 20:32:59.481  INFO 8860 --- [restartedMain] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-05-06 20:32:59.481  INFO 8860 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2019-05-06 20:32:59.481  INFO 8860 --- [restartedMain] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-05-06 20:33:00.060  INFO 8860 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 44823ad8-1f58-43b0-9989-05f618b1aa7a
+
+2019-05-06 20:33:00.136  INFO 8860 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3138098a, org.springframework.security.web.context.SecurityContextPersistenceFilter@c21eb88, org.springframework.security.web.header.HeaderWriterFilter@ea1696c, org.springframework.security.web.authentication.logout.LogoutFilter@126cef4e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@73b0062b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@765feb38, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@474add54, org.springframework.security.web.session.SessionManagementFilter@26b85de0, org.springframework.security.web.access.ExceptionTranslationFilter@6bf2a25, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@125e1e5f]
+2019-05-06 20:33:00.230 DEBUG 8860 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-05-06 20:33:00.395  INFO 8860 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-06 20:33:00.421 DEBUG 8860 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice
+2019-05-06 20:33:00.438 DEBUG 8860 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2019-05-06 20:33:00.445 DEBUG 8860 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-05-06 20:33:00.504 DEBUG 8860 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-05-06 20:33:01.364  INFO 8860 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-05-06 20:33:01.487  INFO 8860 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-05-06 20:33:02.989  INFO 8860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-06 20:33:02.990  INFO 8860 --- [restartedMain] com.yaoyili.MainApplication              : Started MainApplication in 7.045 seconds (JVM running for 298.922)
+2019-05-06 20:33:02.998  INFO 8860 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-05-06 20:34:06.642  INFO 8860 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-05-06 20:34:06.643  INFO 8860 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-05-06 20:34:06.643 DEBUG 8860 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2019-05-06 20:34:06.648 DEBUG 8860 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-05-06 20:34:06.648  INFO 8860 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2019-05-06 20:34:06.650 DEBUG 8860 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.yaoyili.model.ResponseWrapper com.yaoyili.controller.UserController.login(com.yaoyili.model.UserAuth)
+2019-05-06 20:34:06.651 DEBUG 8860 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/user/login", parameters={}
+2019-05-06 20:34:06.651 DEBUG 8860 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.yaoyili.model.ResponseWrapper com.yaoyili.controller.UserController.login(com.yaoyili.model.UserAuth)
+2019-05-06 20:34:06.655 DEBUG 8860 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.yaoyili.model.UserAuth@714d883d]
+2019-05-06 20:34:06.655  INFO 8860 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : DatebookHikariCP - Starting...
+2019-05-06 20:34:06.661  INFO 8860 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : DatebookHikariCP - Start completed.
+2019-05-06 20:34:06.661 DEBUG 8860 --- [http-nio-8080-exec-1] c.yaoyili.dao.UserAuthMapper.isRepeated  : ==>  Preparing: select uid, username, password from user_auth where username = ? 
+2019-05-06 20:34:06.661 DEBUG 8860 --- [http-nio-8080-exec-1] c.yaoyili.dao.UserAuthMapper.isRepeated  : ==> Parameters: yaoyili1(String)
+2019-05-06 20:34:06.663 DEBUG 8860 --- [http-nio-8080-exec-1] c.yaoyili.dao.UserAuthMapper.isRepeated  : <==      Total: 0
+2019-05-06 20:34:06.665 DEBUG 8860 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2019-05-06 20:34:06.665 DEBUG 8860 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.yaoyili.model.ResponseWrapper@462695d9]
+2019-05-06 20:34:06.667 DEBUG 8860 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-05-06 20:34:57.683  INFO 1672 --- [restartedMain] com.yaoyili.MainApplication              : No active profile set, falling back to default profiles: default
+2019-05-06 20:34:59.162  INFO 1672 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-05-06 20:34:59.167  INFO 1672 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-06 20:34:59.198  INFO 1672 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13ms. Found 0 repository interfaces.
+2019-05-06 20:34:59.907  INFO 1672 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9348b072-d577-3e99-bca5-f44669d8e4b1
+2019-05-06 20:35:00.007  INFO 1672 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$702d9a14] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:35:00.064  INFO 1672 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$8c479d11] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:35:01.334  INFO 1672 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-06 20:35:01.363  INFO 1672 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-06 20:35:01.363  INFO 1672 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-05-06 20:35:01.380  INFO 1672 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+2019-05-06 20:35:01.380  INFO 1672 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-05-06 20:35:01.380  INFO 1672 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-05-06 20:35:02.457  INFO 1672 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+2019-05-06 20:35:02.799  INFO 1672 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-06 20:35:02.800 DEBUG 1672 --- [restartedMain] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-05-06 20:35:02.800  INFO 1672 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5101 ms
+2019-05-06 20:35:04.511  INFO 1672 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-05-06 20:35:04.512  INFO 1672 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-05-06 20:35:04.512  INFO 1672 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-05-06 20:35:04.512  INFO 1672 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-05-06 20:35:04.513  INFO 1672 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-05-06 20:35:04.514  INFO 1672 --- [restartedMain] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-05-06 20:35:04.514  INFO 1672 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2019-05-06 20:35:04.514  INFO 1672 --- [restartedMain] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-05-06 20:35:05.581  INFO 1672 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 95c73ac3-ff76-4a79-8402-9028f8c64364
+
+2019-05-06 20:35:05.821  INFO 1672 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5f7087ca, org.springframework.security.web.context.SecurityContextPersistenceFilter@10d361e, org.springframework.security.web.header.HeaderWriterFilter@235c168b, org.springframework.security.web.authentication.logout.LogoutFilter@4b0bc1c4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@bb787c5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@aaf9ef9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@9c33621, org.springframework.security.web.session.SessionManagementFilter@4174b8ac, org.springframework.security.web.access.ExceptionTranslationFilter@3560380f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@109cecad]
+2019-05-06 20:35:05.953 DEBUG 1672 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-05-06 20:35:06.243  INFO 1672 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-06 20:35:06.259 DEBUG 1672 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice
+2019-05-06 20:35:06.421 DEBUG 1672 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2019-05-06 20:35:06.449 DEBUG 1672 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-05-06 20:35:06.467 DEBUG 1672 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-05-06 20:35:07.201  INFO 1672 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-05-06 20:35:07.328  WARN 1672 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2019-05-06 20:35:07.992 ERROR 1672 --- [restartedMain] org.apache.catalina.util.LifecycleBase   : Failed to start component [Connector[HTTP/1.1-8080]]
+
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:960) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:259) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:197) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:300) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:162) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) [spring-context-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at com.yaoyili.MainApplication.main(MainApplication.java:12) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_144]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_144]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_144]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_144]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_144]
+	at sun.nio.ch.Net.bind(Net.java:433) ~[na:1.8.0_144]
+	at sun.nio.ch.Net.bind(Net.java:425) ~[na:1.8.0_144]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[na:1.8.0_144]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.8.0_144]
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:236) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1108) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:550) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:957) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	... 19 common frames omitted
+
+2019-05-06 20:35:08.011  INFO 1672 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-05-06 20:35:08.017  WARN 1672 --- [restartedMain] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [lettuce-eventExecutorLoop-1-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+ io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:251)
+ io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+ io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884)
+ io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.lang.Thread.run(Thread.java:748)
+2019-05-06 20:35:08.030  INFO 1672 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-05-06 20:35:08.033 ERROR 1672 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+
+2019-05-06 20:35:08.047  INFO 1672 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-06 20:35:11.564 DEBUG 8860 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.yaoyili.model.ResponseWrapper com.yaoyili.controller.UserController.login(com.yaoyili.model.UserAuth)
+2019-05-06 20:35:11.565 DEBUG 8860 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/user/login", parameters={}
+2019-05-06 20:35:11.566 DEBUG 8860 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.yaoyili.model.ResponseWrapper com.yaoyili.controller.UserController.login(com.yaoyili.model.UserAuth)
+2019-05-06 20:35:11.566 DEBUG 8860 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.yaoyili.model.UserAuth@3d2f98fb]
+2019-05-06 20:35:30.536 DEBUG 8860 --- [http-nio-8080-exec-3] c.yaoyili.dao.UserAuthMapper.isRepeated  : ==>  Preparing: select uid, username, password from user_auth where username = ? 
+2019-05-06 20:35:30.538 DEBUG 8860 --- [http-nio-8080-exec-3] c.yaoyili.dao.UserAuthMapper.isRepeated  : ==> Parameters: yaoyili1(String)
+2019-05-06 20:35:30.540 DEBUG 8860 --- [http-nio-8080-exec-3] c.yaoyili.dao.UserAuthMapper.isRepeated  : <==      Total: 0
+2019-05-06 20:36:09.406 DEBUG 8860 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2019-05-06 20:36:09.406 DEBUG 8860 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.yaoyili.model.ResponseWrapper@502afc02]
+2019-05-06 20:36:09.410 DEBUG 8860 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-05-06 20:36:31.047  INFO 2940 --- [restartedMain] com.yaoyili.MainApplication              : No active profile set, falling back to default profiles: default
+2019-05-06 20:36:32.715  INFO 2940 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-05-06 20:36:32.719  INFO 2940 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-06 20:36:32.752  INFO 2940 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15ms. Found 0 repository interfaces.
+2019-05-06 20:36:33.536  INFO 2940 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9348b072-d577-3e99-bca5-f44669d8e4b1
+2019-05-06 20:36:33.678  INFO 2940 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$bff6a02b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:36:33.739  INFO 2940 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$dc10a328] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-06 20:36:35.011  INFO 2940 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-06 20:36:35.041  INFO 2940 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-06 20:36:35.042  INFO 2940 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-05-06 20:36:35.057  INFO 2940 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+2019-05-06 20:36:35.057  INFO 2940 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-05-06 20:36:35.058  INFO 2940 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-05-06 20:36:36.127  INFO 2940 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+2019-05-06 20:36:36.313  INFO 2940 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-06 20:36:36.313 DEBUG 2940 --- [restartedMain] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-05-06 20:36:36.314  INFO 2940 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5249 ms
+2019-05-06 20:36:37.776  INFO 2940 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-05-06 20:36:37.776  INFO 2940 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-05-06 20:36:37.777  INFO 2940 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-05-06 20:36:37.777  INFO 2940 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-05-06 20:36:37.777  INFO 2940 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-05-06 20:36:37.777  INFO 2940 --- [restartedMain] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-05-06 20:36:37.778  INFO 2940 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2019-05-06 20:36:37.778  INFO 2940 --- [restartedMain] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-05-06 20:36:38.606  INFO 2940 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: cc483fdd-dd2b-4010-b8f5-e865c120f058
+
+2019-05-06 20:36:38.758  INFO 2940 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@48554e95, org.springframework.security.web.context.SecurityContextPersistenceFilter@367ce9b1, org.springframework.security.web.header.HeaderWriterFilter@714395b, org.springframework.security.web.authentication.logout.LogoutFilter@2a8a6154, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1fed112a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@148bba71, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6af31fb4, org.springframework.security.web.session.SessionManagementFilter@5b19681f, org.springframework.security.web.access.ExceptionTranslationFilter@7a21b9e0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@589383a1]
+2019-05-06 20:36:38.903 DEBUG 2940 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-05-06 20:36:39.169  INFO 2940 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-06 20:36:39.211 DEBUG 2940 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice
+2019-05-06 20:36:39.331 DEBUG 2940 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2019-05-06 20:36:39.366 DEBUG 2940 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-05-06 20:36:39.385 DEBUG 2940 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-05-06 20:36:40.035  INFO 2940 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-05-06 20:36:40.152  INFO 2940 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-05-06 20:36:40.844  INFO 2940 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-06 20:36:40.847  INFO 2940 --- [restartedMain] com.yaoyili.MainApplication              : Started MainApplication in 12.367 seconds (JVM running for 13.467)
+2019-05-06 20:37:44.018  INFO 2940 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-05-06 20:37:44.019  INFO 2940 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-05-06 20:37:44.019 DEBUG 2940 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2019-05-06 20:37:44.036 DEBUG 2940 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-05-06 20:37:44.036  INFO 2940 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
+2019-05-06 20:37:44.069 DEBUG 2940 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.yaoyili.model.ResponseWrapper com.yaoyili.controller.UserController.login(com.yaoyili.model.UserAuth)
+2019-05-06 20:37:44.113 DEBUG 2940 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/user/login", parameters={}
+2019-05-06 20:37:44.116 DEBUG 2940 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.yaoyili.model.ResponseWrapper com.yaoyili.controller.UserController.login(com.yaoyili.model.UserAuth)
+2019-05-06 20:37:44.429 DEBUG 2940 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.yaoyili.model.UserAuth@73b4634c]
+2019-05-06 20:37:48.923  INFO 2940 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : DatebookHikariCP - Starting...
+2019-05-06 20:37:49.238  INFO 2940 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : DatebookHikariCP - Start completed.
+2019-05-06 20:37:49.246 DEBUG 2940 --- [http-nio-8080-exec-1] c.yaoyili.dao.UserAuthMapper.isRepeated  : ==>  Preparing: select uid, username, password from user_auth where username = ? 
+2019-05-06 20:37:49.269 DEBUG 2940 --- [http-nio-8080-exec-1] c.yaoyili.dao.UserAuthMapper.isRepeated  : ==> Parameters: yaoyili1(String)
+2019-05-06 20:37:49.285 DEBUG 2940 --- [http-nio-8080-exec-1] c.yaoyili.dao.UserAuthMapper.isRepeated  : <==      Total: 0
+2019-05-06 20:37:49.308 DEBUG 2940 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2019-05-06 20:37:49.309 DEBUG 2940 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.yaoyili.model.ResponseWrapper@45e8ee53]
+2019-05-06 20:37:49.334 DEBUG 2940 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
