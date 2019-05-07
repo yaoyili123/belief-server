@@ -1,12 +1,17 @@
 package com.yaoyili.controller;
 
+import com.yaoyili.model.ResponseWrapper;
+import com.yaoyili.model.UserInfo;
 import com.yaoyili.service.SportService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 
 @RestController
+//@ResponseStatus(HttpStatus.OK)
 @RequestMapping(value = "/sport")
 public class SportController {
 
@@ -14,25 +19,34 @@ public class SportController {
     private SportService sportService;
 
     @GetMapping(value = "class/{uid}")
-    public List<Integer> getJoinedClasses(@PathVariable("uid") Integer uid) {
-        return sportService.getJoinedClasses(uid);
+    public ResponseWrapper getJoinedClasses(@PathVariable("uid") Integer uid) {
+        return new ResponseWrapper<List>(
+                200, "SUCCESS",
+                sportService.getJoinedClasses(uid));
     }
 
     @GetMapping(value = "total_time/{uid}")
-    public Integer getTotalKcal(@PathVariable("uid") Integer uid) {
-        return sportService.getTotalKcal(uid);
+    public ResponseWrapper getTotalKcal(@PathVariable("uid") Integer uid) {
+
+        return new ResponseWrapper<Integer>(
+                200, "SUCCESS",
+                sportService.getTotalKcal(uid));
     }
 
     @PostMapping(value = "add_class/{uid}")
-    public String addClassToUser(@PathVariable("uid") Integer uid, @RequestBody List<Integer> classList) {
+    public ResponseWrapper addClassToUser(@PathVariable("uid") Integer uid, @RequestBody List<Integer> classList) {
         sportService.addClassToUser(uid, classList);
-        return "success";
+        return new ResponseWrapper<Object>(
+                200, "SUCCESS",
+                new HashMap<>());
     }
 
     @PutMapping(value = "/settle/{uid}/{kcal}/{time}")
-    public String settleKcal(@PathVariable("uid") int uid, @PathVariable("kcal") int kcal,
+    public ResponseWrapper settleKcal(@PathVariable("uid") int uid, @PathVariable("kcal") int kcal,
                            @PathVariable("time") int time) {
         sportService.settleKcal(uid, kcal, time);
-        return "success";
+        return new ResponseWrapper<Object>(
+                200, "SUCCESS",
+                new HashMap<>());
     }
 }
