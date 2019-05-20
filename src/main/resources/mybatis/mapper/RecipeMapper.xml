@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yaoyili.dao.RecipeMapper">
+  <resultMap id="BaseResultMap" type="com.yaoyili.model.Recipe">
+    <id column="rid" jdbcType="INTEGER" property="rid" />
+    <result column="tid" jdbcType="INTEGER" property="tid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="photo_url" jdbcType="VARCHAR" property="photoUrl" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.yaoyili.model.Recipe">
+    <result column="ingredient" jdbcType="LONGVARCHAR" property="ingredient" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    rid, tid, name, photo_url
+  </sql>
+  <sql id="Blob_Column_List">
+    ingredient
+  </sql>
+
+  <select id="findByType" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from recipe
+    where tid = #{tid,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from recipe
+    where rid = #{rid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from recipe
+    where rid = #{rid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yaoyili.model.Recipe">
+    insert into recipe (rid, tid, name, 
+      photo_url, ingredient)
+    values (#{rid,jdbcType=INTEGER}, #{tid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+      #{photoUrl,jdbcType=VARCHAR}, #{ingredient,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yaoyili.model.Recipe">
+    insert into recipe
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="rid != null">
+        rid,
+      </if>
+      <if test="tid != null">
+        tid,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="photoUrl != null">
+        photo_url,
+      </if>
+      <if test="ingredient != null">
+        ingredient,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="rid != null">
+        #{rid,jdbcType=INTEGER},
+      </if>
+      <if test="tid != null">
+        #{tid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="photoUrl != null">
+        #{photoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="ingredient != null">
+        #{ingredient,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yaoyili.model.Recipe">
+    update recipe
+    <set>
+      <if test="tid != null">
+        tid = #{tid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="photoUrl != null">
+        photo_url = #{photoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="ingredient != null">
+        ingredient = #{ingredient,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where rid = #{rid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.yaoyili.model.Recipe">
+    update recipe
+    set tid = #{tid,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      photo_url = #{photoUrl,jdbcType=VARCHAR},
+      ingredient = #{ingredient,jdbcType=LONGVARCHAR}
+    where rid = #{rid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yaoyili.model.Recipe">
+    update recipe
+    set tid = #{tid,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      photo_url = #{photoUrl,jdbcType=VARCHAR}
+    where rid = #{rid,jdbcType=INTEGER}
+  </update>
+</mapper>

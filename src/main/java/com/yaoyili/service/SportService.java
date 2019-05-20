@@ -1,12 +1,15 @@
 package com.yaoyili.service;
 
+import com.yaoyili.model.SportClass;
 import com.yaoyili.model.UserJoinClass;
 
 import java.util.List;
 
 public interface SportService {
 
-    List<Integer> getJoinedClasses(int uid);
+    SportClass getSportClass(int scid);
+
+    List<SportClass> getJoinedClasses(int uid);
 
     int getTotalKcal(int uid);
 

@@ -1,12 +1,21 @@
 package com.yaoyili.service;
 
+import com.yaoyili.model.Food;
+import com.yaoyili.model.Recipe;
+import com.yaoyili.model.RecipeType;
 import com.yaoyili.model.UserCollectRecipe;
 
 import java.util.List;
 
 public interface RecipeService {
 
-    List<Integer> getRecipes(int uid);
+    List<Recipe> getRecipesByType(int tid);
+
+    List<RecipeType> getRecipeType();
+
+    List<Food> getFoods();
+
+    List<Recipe> getRecipesByUser(int uid);
 
     void addRecipe(int uid, int rid);
 

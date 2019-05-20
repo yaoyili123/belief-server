@@ -19,11 +19,32 @@ public class RecipeController {
     @Autowired
     private RecipeService recipeService;
 
-    @GetMapping(value = "collects/{uid}")
-    public ResponseWrapper getRecipes(@PathVariable(value = "uid")int uid) {
+    @GetMapping(value = "{tid}")
+    public ResponseWrapper getRecipesByType(@PathVariable(value = "tid")int tid) {
         return new ResponseWrapper<List>(
                 200, "SUCCESS",
-                recipeService.getRecipes(uid));
+                recipeService.getRecipesByType(tid));
+    }
+
+    @GetMapping(value = "type")
+    public ResponseWrapper getRecipeType() {
+        return new ResponseWrapper<List>(
+                200, "SUCCESS",
+                recipeService.getRecipeType());
+    }
+
+    @GetMapping(value = "foods")
+    public ResponseWrapper getFoods() {
+        return new ResponseWrapper<List>(
+                200, "SUCCESS",
+                recipeService.getFoods());
+    }
+
+    @GetMapping(value = "collects/{uid}")
+    public ResponseWrapper getRecipesByUser(@PathVariable(value = "uid")int uid) {
+        return new ResponseWrapper<List>(
+                200, "SUCCESS",
+                recipeService.getRecipesByUser(uid));
     }
 
     @PutMapping(value = "collects/{uid}/{rid}")

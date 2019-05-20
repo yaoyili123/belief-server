@@ -1,8 +1,10 @@
 package com.yaoyili.service.impl;
 
+import com.yaoyili.dao.SportClassMapper;
 import com.yaoyili.dao.UserJoinClassMapper;
 import com.yaoyili.dao.UserKcalTrendMapper;
 import com.yaoyili.dao.UserSportInfoMapper;
+import com.yaoyili.model.SportClass;
 import com.yaoyili.model.UserJoinClass;
 import com.yaoyili.model.UserKcalTrend;
 import com.yaoyili.model.UserSportInfo;
@@ -28,11 +30,23 @@ public class SportServiceImpl implements SportService {
     @Autowired
     private UserSportInfoMapper userSportInfoMapper;
 
-    @Override
-    public List<Integer> getJoinedClasses(int uid) {
+    @Autowired
+    private SportClassMapper sportClassMapper;
 
-        List<Integer> res =  userJoinClassMapper.getClassesbyUser(uid);
-        return res != null ? res : new ArrayList<Integer>();
+    @Override
+    public SportClass getSportClass(int scid) {
+        return sportClassMapper.selectByPrimaryKey(scid);
+    }
+
+    @Override
+    public List<SportClass> getJoinedClasses(int uid) {
+
+        List<Integer> classList = userJoinClassMapper.getClassesbyUser(uid);
+        List<SportClass> res = new ArrayList<SportClass>();
+        for (Integer scid: classList) {
+            res.add(sportClassMapper.selectByPrimaryKey(scid));
+        }
+        return res;
     }
 
     @Override

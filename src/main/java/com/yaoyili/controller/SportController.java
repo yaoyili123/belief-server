@@ -1,6 +1,7 @@
 package com.yaoyili.controller;
 
 import com.yaoyili.model.ResponseWrapper;
+import com.yaoyili.model.SportClass;
 import com.yaoyili.model.UserInfo;
 import com.yaoyili.service.SportService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,13 @@ public class SportController {
 
     @Autowired
     private SportService sportService;
+
+    @GetMapping(value = "{scid}")
+    public ResponseWrapper getSportClass(@PathVariable("scid") Integer scid) {
+        return new ResponseWrapper<SportClass>(
+                200, "SUCCESS",
+                sportService.getSportClass(scid));
+    }
 
     @GetMapping(value = "class/{uid}")
     public ResponseWrapper getJoinedClasses(@PathVariable("uid") Integer uid) {

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yaoyili.dao.FoodMapper">
+  <resultMap id="BaseResultMap" type="com.yaoyili.model.Food">
+    <id column="fid" jdbcType="INTEGER" property="fid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="photo_url" jdbcType="VARCHAR" property="photoUrl" />
+    <result column="detail" jdbcType="VARCHAR" property="detail" />
+    <result column="kcal" jdbcType="INTEGER" property="kcal" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.yaoyili.model.Food">
+    <result column="ingredient" jdbcType="LONGVARCHAR" property="ingredient" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    fid, name, photo_url, detail, kcal
+  </sql>
+  <sql id="Blob_Column_List">
+    ingredient
+  </sql>
+
+  <select id="getAll" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from food
+  </select>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from food
+    where fid = #{fid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from food
+    where fid = #{fid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yaoyili.model.Food">
+    insert into food (fid, name, photo_url, 
+      detail, kcal, ingredient
+      )
+    values (#{fid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{photoUrl,jdbcType=VARCHAR}, 
+      #{detail,jdbcType=VARCHAR}, #{kcal,jdbcType=INTEGER}, #{ingredient,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.yaoyili.model.Food">
+    insert into food
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="fid != null">
+        fid,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="photoUrl != null">
+        photo_url,
+      </if>
+      <if test="detail != null">
+        detail,
+      </if>
+      <if test="kcal != null">
+        kcal,
+      </if>
+      <if test="ingredient != null">
+        ingredient,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="fid != null">
+        #{fid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="photoUrl != null">
+        #{photoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="detail != null">
+        #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="kcal != null">
+        #{kcal,jdbcType=INTEGER},
+      </if>
+      <if test="ingredient != null">
+        #{ingredient,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yaoyili.model.Food">
+    update food
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="photoUrl != null">
+        photo_url = #{photoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="detail != null">
+        detail = #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="kcal != null">
+        kcal = #{kcal,jdbcType=INTEGER},
+      </if>
+      <if test="ingredient != null">
+        ingredient = #{ingredient,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where fid = #{fid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.yaoyili.model.Food">
+    update food
+    set name = #{name,jdbcType=VARCHAR},
+      photo_url = #{photoUrl,jdbcType=VARCHAR},
+      detail = #{detail,jdbcType=VARCHAR},
+      kcal = #{kcal,jdbcType=INTEGER},
+      ingredient = #{ingredient,jdbcType=LONGVARCHAR}
+    where fid = #{fid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yaoyili.model.Food">
+    update food
+    set name = #{name,jdbcType=VARCHAR},
+      photo_url = #{photoUrl,jdbcType=VARCHAR},
+      detail = #{detail,jdbcType=VARCHAR},
+      kcal = #{kcal,jdbcType=INTEGER}
+    where fid = #{fid,jdbcType=INTEGER}
+  </update>
+</mapper>
