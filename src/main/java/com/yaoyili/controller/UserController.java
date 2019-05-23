@@ -22,13 +22,18 @@ public class UserController {
         int res = userService.register(userAuth);
         ResponseWrapper responseWrapper = null;
         switch (res) {
-            case 0: {
-                responseWrapper = new ResponseWrapper<Object>(200,
-                        "注册成功", new HashMap<>());
+            case -1: {
+//                throw new RuntimeException("用户名已存在");
+                responseWrapper = new ResponseWrapper<Object>(500,
+                        "用户名已存在", new HashMap<>());
                 break;
             }
-            case 1: {
-                throw new RuntimeException("用户名已存在");
+            default: {
+                Map resMap = new HashMap<String, Object>();
+                resMap.put("uid", res);
+                responseWrapper = new ResponseWrapper<Object>(200,
+                        "注册成功", resMap);
+                break;
             }
         }
         return responseWrapper;
@@ -37,18 +42,27 @@ public class UserController {
     @PostMapping(value = "login")
     public ResponseWrapper login(@RequestBody UserAuth userAuth) {
         int res = userService.login(userAuth);
+
         ResponseWrapper responseWrapper = null;
         switch (res) {
-            case 0: {
-                responseWrapper = new ResponseWrapper<Object>(0,
-                        "登陆成功", new HashMap<>());
+            case -1: {
+//                throw new RuntimeException("用户名不存在");
+                responseWrapper = new ResponseWrapper<Object>(500,
+                        "用户名不存在", new HashMap<>());
                 break;
             }
-            case 1: {
-                throw new RuntimeException("用户名不存在");
+            case -2: {
+//                throw new RuntimeException("密码错误");
+                responseWrapper = new ResponseWrapper<Object>(500,
+                        "密码错误", new HashMap<>());
+                break;
             }
-            case 2: {
-                throw new RuntimeException("密码错误");
+            default:{
+                Map resMap = new HashMap<String, Object>();
+                resMap.put("uid", res);
+                responseWrapper = new ResponseWrapper<Object>(200,
+                        "登陆成功", resMap);
+                break;
             }
         }
         return responseWrapper;

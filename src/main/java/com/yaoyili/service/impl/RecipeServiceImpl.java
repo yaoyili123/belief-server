@@ -37,6 +37,7 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     public List<RecipeType> getRecipeType() {
+
         return recipeTypeMapper.getAll();
     }
 

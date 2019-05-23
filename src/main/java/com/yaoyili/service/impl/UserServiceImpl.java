@@ -36,23 +36,24 @@ public class UserServiceImpl implements UserService {
     @Override
     public int register(UserAuth userAuth) {
         if (userAuthMapper.isRepeated(userAuth.getUsername()) != null)
-            return 1;
+            return -1;
         userAuthMapper.insertSelective(userAuth);
-        UserAuth curUser = userAuthMapper.isRepeated(userAuth.getUsername());
+//        UserAuth curUser = userAuthMapper.isRepeated(userAuth.getUsername());
         //创建相应的user_sport_info字段和user_info字段
-        userSportInfoMapper.insertSelective(new UserSportInfo(curUser.getUid(), 0, 0, 0));
-        userInfoMapper.insertSelective(new UserInfo(curUser.getUid(), curUser.getUsername(),
+        userSportInfoMapper.insertSelective(new UserSportInfo(userAuth.getUid(), 0, 0, 0));
+        userInfoMapper.insertSelective(new UserInfo(userAuth.getUid(), userAuth.getUsername(),
                 null, null, null));
-        return 0;
+        return userAuth.getUid();
     }
 
     @Override
     public int login(UserAuth userAuth) {
         if (userAuthMapper.isRepeated(userAuth.getUsername()) == null)
-            return 1;
-        if (userAuthMapper.authUser(userAuth) == null)
-            return 2;
-        return 0;
+            return -1;
+        UserAuth curUser = userAuthMapper.authUser(userAuth);
+        if (curUser == null)
+            return -2;
+        return curUser.getUid();
     }
 
     @Override

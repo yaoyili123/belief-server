@@ -41,7 +41,7 @@
     values (#{uid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.yaoyili.model.UserAuth">
+  <insert id="insertSelective" parameterType="com.yaoyili.model.UserAuth" useGeneratedKeys="true" keyProperty="uid" >
     insert into user_auth
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="uid != null">
