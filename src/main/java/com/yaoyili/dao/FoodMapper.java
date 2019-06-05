@@ -10,6 +10,8 @@ public interface FoodMapper {
 
     List getAll();
 
+    List getFoodsByType(Integer tid);
+
     int deleteByPrimaryKey(Integer fid);
 
     int insert(Food record);

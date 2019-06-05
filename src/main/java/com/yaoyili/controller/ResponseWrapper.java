@@ -1,4 +1,4 @@
-package com.yaoyili.model;
+package com.yaoyili.controller;
 
 
 /*用于业务逻辑API响应*/

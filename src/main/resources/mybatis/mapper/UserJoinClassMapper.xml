@@ -6,7 +6,11 @@
     <id column="scid" jdbcType="INTEGER" property="scid" />
   </resultMap>
 
-    <select id="getClassesbyUser" parameterType="java.lang.Integer" resultType="Integer">
+    <select id="seleteById" parameterType="com.yaoyili.model.UserJoinClass" resultMap="UserJoinClassResultMap">
+    SELECT uid,scid FROM user_join_class WHERE uid = #{uid, jdbcType=INTEGER} and scid = #{scid,jdbcType=INTEGER}
+  </select>
+
+  <select id="getClassesbyUser" parameterType="java.lang.Integer" resultType="Integer">
     SELECT scid FROM user_join_class WHERE uid = #{uid, jdbcType=INTEGER}
   </select>
 

@@ -3,13 +3,14 @@
 <mapper namespace="com.yaoyili.dao.UserInfoMapper">
   <resultMap id="UserInfoResultMap" type="com.yaoyili.model.UserInfo">
     <id column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="bothday" jdbcType="DATE" property="bothday" />
     <result column="city" jdbcType="VARCHAR" property="city" />
     <result column="photo_url" jdbcType="VARCHAR" property="photoUrl" />
   </resultMap>
   <sql id="Base_Column_List">
-    uid, name, bothday, city, photo_url
+    uid, name, bothday, city, photo_url, sex
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="UserInfoResultMap">
     select 
@@ -24,7 +25,7 @@
   <insert id="insert" parameterType="com.yaoyili.model.UserInfo">
     insert into user_info (uid, name, bothday, 
       city, photo_url)
-    values (#{uid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{bothday,jdbcType=DATE}, 
+    values (#{uid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{bothday,jdbcType=DATE},
       #{city,jdbcType=VARCHAR}, #{photoUrl,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.yaoyili.model.UserInfo">
@@ -41,6 +42,9 @@
       </if>
       <if test="city != null">
         city,
+      </if>
+      <if test="sex != null">
+        sex,
       </if>
       <if test="photoUrl != null">
         photo_url,
@@ -59,6 +63,9 @@
       <if test="city != null">
         #{city,jdbcType=VARCHAR},
       </if>
+      <if test="sex != null">
+        #{sex,jdbcType=VARCHAR},
+      </if>
       <if test="photoUrl != null">
         #{photoUrl,jdbcType=VARCHAR},
       </if>
@@ -76,6 +83,9 @@
       <if test="city != null">
         city = #{city,jdbcType=VARCHAR},
       </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
       <if test="photoUrl != null">
         photo_url = #{photoUrl,jdbcType=VARCHAR},
       </if>
@@ -86,6 +96,7 @@
     update user_info
     set name = #{name,jdbcType=VARCHAR},
       bothday = #{bothday,jdbcType=DATE},
+      sex = #{sex,jdbcType=VARCHAR}
       city = #{city,jdbcType=VARCHAR},
       photo_url = #{photoUrl,jdbcType=VARCHAR}
     where uid = #{uid,jdbcType=INTEGER}

@@ -16,4 +16,6 @@ public interface UserJoinClassMapper {
     int insert(UserJoinClass record);
 
     int insertSelective(UserJoinClass record);
+
+    UserJoinClass seleteById(UserJoinClass key);
 }

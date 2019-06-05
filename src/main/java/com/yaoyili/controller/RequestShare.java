@@ -1,4 +1,4 @@
-package com.yaoyili.model;
+package com.yaoyili.controller;
 
 public class RequestShare {
 

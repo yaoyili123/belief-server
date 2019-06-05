@@ -1,11 +1,10 @@
 package com.yaoyili.controller;
 
-import com.yaoyili.dao.UserCollectRecipeMapper;
-import com.yaoyili.model.ResponseWrapper;
-import com.yaoyili.model.UserInfo;
+import com.yaoyili.model.Food;
+import com.yaoyili.model.Recipe;
+import com.yaoyili.model.RecipeDetail;
 import com.yaoyili.service.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -19,11 +18,19 @@ public class RecipeController {
     @Autowired
     private RecipeService recipeService;
 
-    @GetMapping(value = "{tid}")
-    public ResponseWrapper getRecipesByType(@PathVariable(value = "tid")int tid) {
+    @GetMapping(value = "{tid}/{uid}")
+    public ResponseWrapper getRecipesByType(@PathVariable(value = "tid")int tid,
+                                            @PathVariable(value = "uid")int uid) {
         return new ResponseWrapper<List>(
                 200, "SUCCESS",
-                recipeService.getRecipesByType(tid));
+                recipeService.getRecipesByType(tid, uid));
+    }
+
+    @GetMapping(value = "detail/{rid}")
+    public ResponseWrapper getRecipeDetail(@PathVariable(value = "rid")int rid) {
+        return new ResponseWrapper<RecipeDetail>(
+                200, "SUCCESS",
+                recipeService.getRecipeDetail(rid));
     }
 
     @GetMapping(value = "type")
@@ -38,6 +45,21 @@ public class RecipeController {
         return new ResponseWrapper<List>(
                 200, "SUCCESS",
                 recipeService.getFoods());
+    }
+
+    @GetMapping(value = "food/{fid}")
+    public ResponseWrapper getFoodDetail(@PathVariable(value = "fid") int fid) {
+        return new ResponseWrapper<Food>(
+                200, "SUCCESS",
+                recipeService.getFoodDetail(fid));
+    }
+
+
+    @GetMapping(value = "foods/{tid}")
+    public ResponseWrapper getFoodsByType(@PathVariable(value = "tid")int tid) {
+        return new ResponseWrapper<List>(
+                200, "SUCCESS",
+                recipeService.getFoodsByType(tid));
     }
 
     @GetMapping(value = "collects/{uid}")

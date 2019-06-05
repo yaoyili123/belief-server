@@ -1,6 +1,5 @@
 package com.yaoyili.controller;
 
-import com.yaoyili.model.ResponseWrapper;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;

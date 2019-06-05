@@ -6,17 +6,16 @@
     <result column="uid" jdbcType="INTEGER" property="uid" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="photo_url" jdbcType="VARCHAR" property="photoUrl" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
   </resultMap>
   <sql id="ShareInfo_Column_List">
-    sid, uid, title, photo_url
+    sid, uid, title, photo_url, content
   </sql>
   
   <select id="getAll" resultMap="ShareInfoResultMap">
     select *
     from share_info
   </select>
-
-
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ShareInfoResultMap">
     select 
@@ -30,9 +29,9 @@
   </delete>
   <insert id="insert" parameterType="com.yaoyili.model.ShareInfo">
     insert into share_info (sid, uid, title, 
-      photo_url)
+      photo_url, content)
     values (#{sid,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, 
-      #{photoUrl,jdbcType=VARCHAR})
+      #{photoUrl,jdbcType=VARCHAR}, #{content, jdbcType=VARCHAR})
   </insert>
 
   <!--配置该方法返回刚才插入的主键-->
@@ -48,6 +47,9 @@
       <if test="title != null">
         title,
       </if>
+      <if test="content != null">
+        content,
+      </if>
       <if test="photoUrl != null">
         photo_url,
       </if>
@@ -61,6 +63,9 @@
       </if>
       <if test="title != null">
         #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
       </if>
       <if test="photoUrl != null">
         #{photoUrl,jdbcType=VARCHAR},
@@ -86,6 +91,7 @@
     update share_info
     set uid = #{uid,jdbcType=INTEGER},
       title = #{title,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
       photo_url = #{photoUrl,jdbcType=VARCHAR}
     where sid = #{sid,jdbcType=INTEGER}
   </update>

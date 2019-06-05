@@ -9,6 +9,16 @@ public class ShareInfo {
 
     private String photoUrl;
 
+    private String content;
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     public Integer getSid() {
         return sid;
     }

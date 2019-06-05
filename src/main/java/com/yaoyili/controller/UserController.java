@@ -3,8 +3,8 @@ package com.yaoyili.controller;
 import com.yaoyili.model.*;
 import com.yaoyili.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.HashMap;
 import java.util.List;
@@ -41,10 +41,10 @@ public class UserController {
 
     @PostMapping(value = "login")
     public ResponseWrapper login(@RequestBody UserAuth userAuth) {
-        int res = userService.login(userAuth);
-
+        Map res = userService.login(userAuth);
+        int ret = (Integer) res.get("res");
         ResponseWrapper responseWrapper = null;
-        switch (res) {
+        switch (ret) {
             case -1: {
 //                throw new RuntimeException("用户名不存在");
                 responseWrapper = new ResponseWrapper<Object>(500,
@@ -58,10 +58,9 @@ public class UserController {
                 break;
             }
             default:{
-                Map resMap = new HashMap<String, Object>();
-                resMap.put("uid", res);
+                res.remove("res");
                 responseWrapper = new ResponseWrapper<Object>(200,
-                        "登陆成功", resMap);
+                        "登陆成功", res);
                 break;
             }
         }
@@ -75,7 +74,7 @@ public class UserController {
                 userService.getSportInfo(uid));
     }
 
-    @PutMapping(value = "user_info")
+    @PutMapping(value = "user_info/update")
     public ResponseWrapper updateUserInfo(@RequestBody UserInfo userInfo) {
         userService.updateUserInfo(userInfo);
         return new ResponseWrapper<Object>(

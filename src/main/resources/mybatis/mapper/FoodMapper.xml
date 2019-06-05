@@ -7,12 +7,13 @@
     <result column="photo_url" jdbcType="VARCHAR" property="photoUrl" />
     <result column="detail" jdbcType="VARCHAR" property="detail" />
     <result column="kcal" jdbcType="INTEGER" property="kcal" />
+    <result column="tid" jdbcType="INTEGER" property="tid" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.yaoyili.model.Food">
     <result column="ingredient" jdbcType="LONGVARCHAR" property="ingredient" />
   </resultMap>
   <sql id="Base_Column_List">
-    fid, name, photo_url, detail, kcal
+    fid, name, photo_url, detail, kcal, tid
   </sql>
   <sql id="Blob_Column_List">
     ingredient
@@ -24,6 +25,13 @@
     ,
     <include refid="Blob_Column_List" />
     from food
+  </select>
+
+  <select id="getFoodsByType" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    from food
+    where tid = #{tid,jdbcType=INTEGER}
   </select>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
@@ -39,10 +47,10 @@
     where fid = #{fid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.yaoyili.model.Food">
-    insert into food (fid, name, photo_url, 
+    insert into food (fid,tid, name, photo_url,
       detail, kcal, ingredient
       )
-    values (#{fid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{photoUrl,jdbcType=VARCHAR}, 
+    values (#{fid,jdbcType=INTEGER}, {tid, jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{photoUrl,jdbcType=VARCHAR},
       #{detail,jdbcType=VARCHAR}, #{kcal,jdbcType=INTEGER}, #{ingredient,jdbcType=LONGVARCHAR}
       )
   </insert>
@@ -51,6 +59,9 @@
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="fid != null">
         fid,
+      </if>
+      <if test="tid != null">
+        tid,
       </if>
       <if test="name != null">
         name,
@@ -72,6 +83,9 @@
       <if test="fid != null">
         #{fid,jdbcType=INTEGER},
       </if>
+      <if test="tid != null">
+        #{tid,jdbcType=INTEGER},
+      </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
@@ -92,6 +106,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.yaoyili.model.Food">
     update food
     <set>
+      <if test="tid != null">
+        tid = #{tid,jdbcType=INTEGER},
+      </if>
       <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
       </if>
@@ -113,6 +130,7 @@
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.yaoyili.model.Food">
     update food
     set name = #{name,jdbcType=VARCHAR},
+      tid = #{tid,jdbcType=INTEGER},
       photo_url = #{photoUrl,jdbcType=VARCHAR},
       detail = #{detail,jdbcType=VARCHAR},
       kcal = #{kcal,jdbcType=INTEGER},
@@ -122,6 +140,7 @@
   <update id="updateByPrimaryKey" parameterType="com.yaoyili.model.Food">
     update food
     set name = #{name,jdbcType=VARCHAR},
+      tid = #{tid,jdbcType=INTEGER},
       photo_url = #{photoUrl,jdbcType=VARCHAR},
       detail = #{detail,jdbcType=VARCHAR},
       kcal = #{kcal,jdbcType=INTEGER}

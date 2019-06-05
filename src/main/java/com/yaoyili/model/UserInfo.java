@@ -1,13 +1,16 @@
 package com.yaoyili.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class UserInfo {
+
     private Integer uid;
 
     private String name;
 
     private Date bothday;
+
+    private String sex;
 
     private String city;
 
@@ -16,12 +19,21 @@ public class UserInfo {
     public UserInfo() {
     }
 
-    public UserInfo(Integer uid, String name, Date bothday, String city, String photoUrl) {
+    public UserInfo(Integer uid, String name, Date bothday, String city, String sex, String photoUrl) {
         this.uid = uid;
         this.name = name;
         this.bothday = bothday;
         this.city = city;
         this.photoUrl = photoUrl;
+        this.sex = sex;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
     public Integer getUid() {

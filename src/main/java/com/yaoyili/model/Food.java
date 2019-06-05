@@ -13,6 +13,16 @@ public class Food {
 
     private String ingredient;
 
+    private Integer tid;
+
+    public Integer getTid() {
+        return tid;
+    }
+
+    public void setTid(Integer tid) {
+        this.tid = tid;
+    }
+
     public Integer getFid() {
         return fid;
     }

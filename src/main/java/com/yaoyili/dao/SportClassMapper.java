@@ -9,6 +9,8 @@ import java.util.List;
 @Mapper
 public interface SportClassMapper {
 
+    List<SportClass> getAll();
+
     int deleteByPrimaryKey(Integer scid);
 
     int insert(SportClass record);

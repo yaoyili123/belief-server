@@ -1,9 +1,8 @@
 package com.yaoyili.controller;
 
-import com.yaoyili.model.*;
+import com.yaoyili.model.ShareInfo;
 import com.yaoyili.service.CommService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -23,6 +22,13 @@ public class CommController {
         return new ResponseWrapper<List>(
                 200, "SUCCESS",
                 commService.getShareList());
+    }
+
+    @GetMapping(value = "share_detail/{sid}")
+    public ResponseWrapper getShareDetail(@PathVariable(value = "sid") int sid) {
+        return new ResponseWrapper<ShareInfoResponse>(
+                200, "SUCCESS",
+                commService.getShareDetail(sid));
     }
 
     @PostMapping(value = "share")

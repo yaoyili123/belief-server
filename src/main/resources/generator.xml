@@ -33,29 +33,29 @@
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
-        <table tableName="food" domainObjectName="Food"
+        <table tableName="sport_action" domainObjectName="SportAction"
         enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>
 
 
-        <table tableName="recipe" domainObjectName="Recipe"
+        <table tableName="class_actions" domainObjectName="ClassActions"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"></table>
 
 
 
-        <table tableName="recipe_type" domainObjectName="RecipeType"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"></table>
+        <!--<table tableName="recipe_type" domainObjectName="RecipeType"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false"></table>-->
 
 
-        <table tableName="sport_class" domainObjectName="SportClass"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"></table>
+        <!--<table tableName="sport_class" domainObjectName="SportClass"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false"></table>-->
 
 
         <!--<table tableName="share_detail" domainObjectName="ShareDetail"-->

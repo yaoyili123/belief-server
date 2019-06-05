@@ -12,10 +12,13 @@ import com.yaoyili.service.UserService;
 import com.yaoyili.utils.TimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.sql.Date;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -42,18 +45,29 @@ public class UserServiceImpl implements UserService {
         //创建相应的user_sport_info字段和user_info字段
         userSportInfoMapper.insertSelective(new UserSportInfo(userAuth.getUid(), 0, 0, 0));
         userInfoMapper.insertSelective(new UserInfo(userAuth.getUid(), userAuth.getUsername(),
-                null, null, null));
+                null, null, null, "unlogined.jpg"));
         return userAuth.getUid();
     }
 
     @Override
-    public int login(UserAuth userAuth) {
-        if (userAuthMapper.isRepeated(userAuth.getUsername()) == null)
-            return -1;
+    public Map login(UserAuth userAuth) {
+        Map res = new HashMap<String, Object>();
+        if (userAuthMapper.isRepeated(userAuth.getUsername()) == null) {
+            res.put("res", -1);
+            return res;
+        }
         UserAuth curUser = userAuthMapper.authUser(userAuth);
-        if (curUser == null)
-            return -2;
-        return curUser.getUid();
+        if (curUser == null) {
+            res.put("res", -2);
+            return res;
+        }
+        res.put("res", 0);
+        res.put("uid", curUser.getUid());
+        String headImg = userInfoMapper.selectByPrimaryKey(curUser.getUid()).getPhotoUrl();
+        if (headImg == null)
+            headImg = new String();
+        res.put("photo_url", headImg);
+        return res;
     }
 
     @Override
