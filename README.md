@@ -1,5 +1,5 @@
 # belief-server
-backEnd of belief  App
+C/S结构belief的基于SSM的后台，挺渣的，没啥亮点
 
 # 技术栈与简介
   
