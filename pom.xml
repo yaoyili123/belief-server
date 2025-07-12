@@ -82,7 +82,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.7</version>
+            <version>3.18.0</version>
         </dependency>
         <!--利用@ConfigurationProperties来生成配置元数据，会在编译时调用-->
         <dependency>
